@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -13,71 +13,139 @@
 }
 
 
-header{
-    .headerInner{
+header {
+    background: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .headerInner {
         display: flex;
         justify-content: space-between;
-        height: 60px;
+        height: 70px;
         align-items: center;
-        nav{
-            ul{
+
+        .desktopNav {
+
+
+            background-color: white;
+            // border-top: 1px solid #ddd;
+            // border-bottom: 1px solid #ddd;
+            color: black;
+            margin: 2rem;
+
+
+            ul {
+                text-align: center;
+                margin-bottom: 0;
+            }
+
+            ul li {
+                display: inline-block;
+            }
+
+            ul li a {
+                color: #666;
+                display: block;
+                font-size: 1.25rem;
+                font-weight: bold;
+                padding: 1em 1.25em;
+                transition: all 250ms ease;
+                will-change: filter;
+            }
+
+            ul li a:hover,
+            ul li a:focus {
+                color: #222;
+            }
+
+            ul:hover a {
+                filter: blur(1px);
+                color: #999;
+            }
+
+            ul:hover a:hover {
+                filter: blur(0px);
+            }
+
+
+            ul {
                 list-style: none;
                 display: flex;
-                gap: 1rem;
+                gap: 2rem;
+
+                li {
+                    a {
+                        color: black;
+                        font-size: 20px;
+                        // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        filter: drop-shadow(5px 5px 10px #5555559a);
+                        background-color: transparent;
+                        text-decoration: none;
+                    }
+                }
             }
         }
-        .searchBox{
+
+        .searchBox {
 
             height: 40px;
-            background: grey;
-            line-height:40px;
+            background: rgba(128, 128, 128, 0.329);
+            line-height: 40px;
             padding: 5px;
             // padding: 5px 10px 5px 10px;
             border-radius: 60px;
         }
-        .searchInput{
-            background: grey;
+
+        .searchInput {
+            background: transparent;
             color: #fff;
             outline: none;
             border: none;
-            line-height:40px;
+            line-height: 40px;
             width: 0px;
             border-radius: 60px;
-
             float: left;
-            font-size:14px;
+            font-size: 14px;
             transition: 0.7s ease;
-            font-family:sans-serif;
-            &::placeholder{
+            font-family: sans-serif;
+
+            &::placeholder {
                 color: white;
             }
         }
-        .searchBtn{
-            display:flex;
+
+        .searchBtn {
+            display: flex;
             justify-content: center;
             align-items: center;
-            text-decoration:none;
-            background: grey;
+            text-decoration: none;
+            background: rgba(128, 128, 128, 0.329)grey;
             padding: 12px;
             border-radius: 50%;
             float: right;
             color: white;
             transition: 0.4s ease;
         }
-        .searchBox:hover > .searchInput{
+
+        .searchBox:hover>.searchInput {
             width: 240px;
             padding: 0px 10px 0px 10px;
             margin: 0px 8px;
         }
-        .searchInput:focus{
+
+        .searchInput:focus {
             width: 240px;
             margin: 0px 8px;
         }
-        .searchBox:hover > .searchBtn{
+
+        .searchBox:hover>.searchBtn {
             background: #fff;
             color: black;
         }
-        .searchInput:focus + .searchBtn{
+
+        .searchInput:focus+.searchBtn {
             color: black;
             background: #fff;
         }

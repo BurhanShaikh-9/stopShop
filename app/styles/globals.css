@@ -11,26 +11,72 @@
   margin-left: auto;
 }
 
+header {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 header .headerInner {
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 70px;
   align-items: center;
 }
-header .headerInner nav ul {
+header .headerInner .desktopNav {
+  background-color: white;
+  color: black;
+  margin: 2rem;
+}
+header .headerInner .desktopNav ul {
+  text-align: center;
+  margin-bottom: 0;
+}
+header .headerInner .desktopNav ul li {
+  display: inline-block;
+}
+header .headerInner .desktopNav ul li a {
+  color: #666;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1em 1.25em;
+  transition: all 250ms ease;
+  will-change: filter;
+}
+header .headerInner .desktopNav ul li a:hover,
+header .headerInner .desktopNav ul li a:focus {
+  color: #222;
+}
+header .headerInner .desktopNav ul:hover a {
+  filter: blur(1px);
+  color: #999;
+}
+header .headerInner .desktopNav ul:hover a:hover {
+  filter: blur(0px);
+}
+header .headerInner .desktopNav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+}
+header .headerInner .desktopNav ul li a {
+  color: black;
+  font-size: 20px;
+  filter: drop-shadow(5px 5px 10px rgba(85, 85, 85, 0.6039215686));
+  background-color: transparent;
+  text-decoration: none;
 }
 header .headerInner .searchBox {
   height: 40px;
-  background: grey;
+  background: rgba(128, 128, 128, 0.329);
   line-height: 40px;
   padding: 5px;
   border-radius: 60px;
 }
 header .headerInner .searchInput {
-  background: grey;
+  background: transparent;
   color: #fff;
   outline: none;
   border: none;
@@ -53,7 +99,7 @@ header .headerInner .searchBtn {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: grey;
+  background: rgba(128, 128, 128, 0.329) grey;
   padding: 12px;
   border-radius: 50%;
   float: right;
