@@ -7,9 +7,9 @@ import { HeroSection } from '@/components/heroSection/heroSection'
 export default function Home() {
   return (
     <React.Fragment>
-      <div className="container">
+      {/* <div className="container"> */}
       <HeroSection />
-      </div>
+      {/* </div> */}
     </React.Fragment>
   )
 }

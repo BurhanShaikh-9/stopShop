@@ -152,11 +152,12 @@ header {
     }
 }
 
-
-
-
-
-
+.carousel-container{
+    width: 100%;
+    .carouselSlider{
+        width: 100%;
+    }
+}
 
 
 @media (min-width: 576px) {

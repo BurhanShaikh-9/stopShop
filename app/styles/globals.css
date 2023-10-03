@@ -124,6 +124,13 @@ header .headerInner .searchInput:focus + .searchBtn {
   background: #fff;
 }
 
+.carousel-container {
+  width: 100%;
+}
+.carousel-container .carouselSlider {
+  width: 100%;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

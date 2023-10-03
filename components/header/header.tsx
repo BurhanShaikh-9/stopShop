@@ -1,8 +1,35 @@
+"use client"
+
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 
 export const Header = () => {
+
+    const [isMobileNav, setIsMobileNav] = useState(false);
+
+    useEffect(() => {
+        // Function to handle window resize
+        const handleResize = () => {
+          // Check the window width and update the state accordingly
+          if (window.innerWidth < 1200) {
+            setIsMobileNav(true);
+          } else {
+            setIsMobileNav(false);
+          }
+        };
+    
+        // Add a resize event listener
+        window.addEventListener('resize', handleResize);
+    
+        // Call the handleResize function once to set the initial state
+        handleResize();
+    
+        // Remove the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
     return (
         <header>
             <div className="container">
@@ -16,7 +43,7 @@ export const Header = () => {
                             <BsSearch/>
                         </a>
                     </div>
-                    <nav className='desktopNav'>
+                    <nav className={` ${isMobileNav ? 'mobilenav' : 'desktopNav'}`}>
                         <ul>
                             <li>
                                 <Link href='#'>
