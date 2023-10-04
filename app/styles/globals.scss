@@ -87,6 +87,22 @@ header {
                 }
             }
         }
+        .mobilenav{
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            height: 100vh;
+            ul{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                flex: 1;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
 
         .searchBox {
 
