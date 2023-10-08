@@ -104,12 +104,13 @@ header .headerInner .mobilenav ul {
   display: flex;
   align-items: center;
   height: 100%;
-  flex: 1;
   justify-content: center;
   flex-direction: column;
+  gap: 20px;
 }
 header .headerInner .mobilenav ul li a {
   color: white;
+  font-size: 20px;
   text-decoration: none;
 }
 header .headerInner .searchBox {
