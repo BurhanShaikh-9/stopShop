@@ -95,7 +95,7 @@ header .headerInner .mobilenav {
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5960784314);
+  background-color: rgba(0, 0, 0, 0.8078431373);
   transform: translateX(100%);
   transition: transform 0.3s ease;
 }

@@ -51,9 +51,8 @@ export const Header = () => {
                             </button>
                         </div>
                     }
-                    {
-                        (!isMobileNav || (isMobileNav && isShowNav)) && (
-                            // <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav && 'showMobileNav'}`}`}>
+                    {/* {
+                        (!isMobileNav || (isMobileNav && isShowNav)) && ( */}
                             <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
                                 <ul>
                                     <li>
@@ -78,7 +77,9 @@ export const Header = () => {
                                     </li>
                                 </ul>
                             </nav>
-                        )}
+                        {/* )
+
+                    } */}
 
 
                 </div>
