@@ -282,7 +282,13 @@ header {
     }
 }
 
+@media (max-width: 575px) {
+    .container{
 
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
