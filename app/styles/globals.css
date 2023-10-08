@@ -96,7 +96,7 @@ header .headerInner .mobilenav {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8078431373);
-  transform: translateX(100%);
+  transform: translateX(1000%);
   transition: transform 0.3s ease;
 }
 header .headerInner .mobilenav ul {
@@ -110,7 +110,6 @@ header .headerInner .mobilenav ul {
 }
 header .headerInner .mobilenav ul li a {
   color: white;
-  font-size: 20px;
   text-decoration: none;
 }
 header .headerInner .searchBox {
@@ -179,6 +178,7 @@ header .headerInner .searchInput:focus + .searchBtn {
 .cartItemWrapper {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 40px;
 }
 .cartItemWrapper .containerItem {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
