@@ -14,6 +14,8 @@
 
 
 header {
+    position: relative;
+    z-index: 1000;
     background: rgba(255, 255, 255, 0.25);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
@@ -25,6 +27,7 @@ header {
         justify-content: space-between;
         height: 70px;
         align-items: center;
+ 
 
         .desktopNav {
 
@@ -87,15 +90,43 @@ header {
                 }
             }
         }
+        .isShowNavActive{
+            button{
+                svg{
+                    color: white;
+                }
+            }
+        }
 
+        .burgerMenuButton {
+            position: relative;
+            z-index: 20;
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                svg{
+                    font-size: 30px;
+
+                }
+            }
+        }
+
+        .showMobileNav{
+            transform: translateX(0) !important;
+            transition: transform 0.3s ease;
+        }
         .mobilenav {
             position: fixed;
             right: 0;
-            top: 0; /* Ensure it's at the top of the stacking order */
-            z-index: 1000; /* Set a high z-index value */
-            transform: translateZ(5px);
+            top: 0;
             height: 100vh;
 
+            width: 100%;
+            background-color: #00000098;
+            transform: translateX(100%);
+            transition: transform 0.3s ease; 
             ul {
                 list-style: none;
                 display: flex;
@@ -104,6 +135,13 @@ header {
                 flex: 1;
                 justify-content: center;
                 flex-direction: column;
+
+                li {
+                    a {
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
             }
         }
 
@@ -205,12 +243,13 @@ header {
             img {
                 transform: translate(150px, 30px) scale(1.4);
             }
+
             .itemInfo {
                 transform: translateX(0px);
-                
+
             }
         }
-        
+
         img {
             width: 100%;
             height: 100%;
@@ -218,11 +257,11 @@ header {
             object-position: top center;
             transition: all 0.75s;
         }
-        
+
         .itemInfo {
             width: 12em;
             height: 100%;
-            background-image: linear-gradient(to right, #00000083 , 60%, rgba(255, 255, 255, 0));
+            background-image: linear-gradient(to right, #00000083, 60%, rgba(255, 255, 255, 0));
             position: absolute;
             top: 0;
             left: 0;
@@ -231,10 +270,12 @@ header {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            h5{
+
+            h5 {
                 color: white;
             }
-            p{
+
+            p {
                 color: white;
             }
         }

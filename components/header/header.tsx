@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 export const Header = () => {
 
     const [isMobileNav, setIsMobileNav] = useState(false);
-
+    const [isShowNav, setIsShowNav] = useState(false)
     useEffect(() => {
         // Function to handle window resize
         const handleResize = () => {
@@ -45,32 +45,42 @@ export const Header = () => {
                         </a>
                     </div>
                     {isMobileNav &&
-                        <RxHamburgerMenu />
+                        <div className={`burgerMenuButton ${isShowNav && 'isShowNavActive'}`}>
+                            <button onClick={() => setIsShowNav(!isShowNav)}>
+                                <RxHamburgerMenu />
+                            </button>
+                        </div>
                     }
-                    <nav className={` ${isMobileNav ? 'mobilenav' : 'desktopNav'}`}>
-                        <ul>
-                            <li>
-                                <Link href='#'>
-                                    Categories
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='#'>
-                                    About Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='#'>
-                                    Contact Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href='#'>
-                                    Cart
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav>
+                    {
+                        (!isMobileNav || (isMobileNav && isShowNav)) && (
+                            // <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav && 'showMobileNav'}`}`}>
+                            <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
+                                <ul>
+                                    <li>
+                                        <Link href='#'>
+                                            Categories
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href='#'>
+                                            About Us
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href='#'>
+                                            Contact Us
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href='#'>
+                                            Cart
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        )}
+
+
                 </div>
             </div>
         </header>
