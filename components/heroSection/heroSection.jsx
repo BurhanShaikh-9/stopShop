@@ -1,36 +1,51 @@
 "use client"
-import React from 'react'
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image'
-import carouselImg from '../../assets/carousel1.jpg'
+import carouselImg1 from '../../assets/carousel1.jpg'
+import carouselImg2 from '../../assets/carousel2.jpg'
+import carouselImg3 from '../../assets/carousel3.jpg'
+import carouselImg4 from '../../assets/carousel4.jpg'
+
 
 export const HeroSection = () => {
     return (
         <React.Fragment>
             <div className="carousel-container">
-                <Carousel
-                    showArrows={true}
-                    infiniteLoop={true}
-                    showThumbs={false}
-                    showStatus={false}
-                    autoPlay={true}
-                    interval={3000}
+
+
+                <Swiper
+                    spaceBetween={30}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className="mySwiper"
                 >
-                    <div className="carouselSlider">
-                        <Image src={carouselImg} alt="Slide 1" />
-                        <p className="legend">Legend 1</p>
-                    </div>
-                    <div className="carouselSlider">
-                        <Image src={carouselImg} alt="Slide 2" />
-                        <p className="legend">Legend 2</p>
-                    </div>
-                    <div className="carouselSlider">
-                        <Image src={carouselImg} alt="Slide 3" />
-                        <p className="legend">Legend 3</p>
-                    </div>
-                </Carousel>
+                    <SwiperSlide className="carouselSlider">
+                        <Image src={carouselImg1} alt="Slide 1" />
+                    </SwiperSlide>
+                    <SwiperSlide className="carouselSlider">
+                        <Image src={carouselImg2} alt="Slide 2" />
+                    </SwiperSlide>
+                    <SwiperSlide className="carouselSlider">
+                        <Image src={carouselImg3} alt="Slide 3" />
+                    </SwiperSlide>
+                    <SwiperSlide className="carouselSlider">
+                        <Image src={carouselImg4} alt="Slide 3" />
+                    </SwiperSlide>
+                </Swiper>
             </div>
+
+
         </React.Fragment>
     )
 }
