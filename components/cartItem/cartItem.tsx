@@ -28,7 +28,7 @@ export const CartItem = () => {
 
                 <div className="cartItemWrapper">
                     {data.map((item, keyId) => (
-                        <SingleItem itemData={item} key={keyId} />
+                        <SingleItem itemData={item} key={keyId} uniqueId={keyId} />
                     ))}
 
                 </div>

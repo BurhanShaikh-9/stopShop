@@ -12,11 +12,11 @@ interface SingleItemProps {
       color: string;
       image: StaticImageData;
     },
-    key:number; 
+    uniqueId:number; 
   }
 
 
- export const SingleItem: React.FC<SingleItemProps> = ({ itemData, key }) => {
+ export const SingleItem: React.FC<SingleItemProps> = ({ itemData, uniqueId }) => {
     return (
         <form className="containerItem"  style={{ backgroundColor: itemData.color }}>
             <Image src={itemData.image} alt="Slide 1" />
@@ -26,24 +26,24 @@ interface SingleItemProps {
                     <h5>{itemData.name}</h5>
                     <div className="itemSize">
                         <div className="radioSizeButton">
-                            <input type="radio" id={`xsSize${key}`} name='radioSize' />
-                            <label htmlFor={`xsSize${key}`}>XS</label>
+                            <input type="radio" id={`xsSize${uniqueId}`} name='radioSize' required/>
+                            <label htmlFor={`xsSize${uniqueId}`}>XS</label>
                         </div>
                         <div className="radioSizeButton">
-                            <input type="radio" id={`sSize${key}`} name='radioSize' />
-                            <label htmlFor={`sSize${key}`}>S</label>
+                            <input type="radio" id={`sSize${uniqueId}`} name='radioSize' required />
+                            <label htmlFor={`sSize${uniqueId}`}>S</label>
                         </div>
                         <div className="radioSizeButton">
-                            <input type="radio" id={`mSize${key}`} name='radioSize' />
-                            <label htmlFor={`mSize${key}`}>M</label>
+                            <input type="radio" id={`mSize${uniqueId}`} name='radioSize' required/>
+                            <label htmlFor={`mSize${uniqueId}`}>M</label>
                         </div>
                         <div className="radioSizeButton">
-                            <input type="radio" id={`xSize${key}`} name='radioSize' />
-                            <label htmlFor={`xSize${key}`}>X</label>
+                            <input type="radio" id={`xSize${uniqueId}`} name='radioSize' required/>
+                            <label htmlFor={`xSize${uniqueId}`}>X</label>
                         </div>
                         <div className="radioSizeButton">
-                            <input type="radio" id={`xlSize${key}`} name='radioSize' />
-                            <label htmlFor={`xlSize${key}`}>XL</label>
+                            <input type="radio" id={`xlSize${uniqueId}`} name='radioSize' required />
+                            <label htmlFor={`xlSize${uniqueId}`}>XL</label>
                         </div>
 
 

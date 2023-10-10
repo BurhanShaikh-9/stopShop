@@ -1,16 +1,17 @@
 "use client"
 
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 export const AddToCartButton = () => {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleButtonClick = () => {
-      if (!isLoading) {
-        setIsLoading(true);
-        setTimeout(() => setIsLoading(false), 3700);
-      }
+    const handleButtonClick = (e) => {
+        e.preventDefault();
+        if (!isLoading) {
+            setIsLoading(true);
+            setTimeout(() => setIsLoading(false), 3700);
+        }
     };
 
     return (
