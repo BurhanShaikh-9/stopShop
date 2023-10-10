@@ -41,8 +41,6 @@ header .headerInner .desktopNav ul li {
 header .headerInner .desktopNav ul li a {
   color: #666;
   display: block;
-  font-size: 1.25rem;
-  font-weight: bold;
   padding: 1em 1.25em;
   transition: all 250ms ease;
   will-change: filter;
@@ -58,15 +56,9 @@ header .headerInner .desktopNav ul:hover a {
 header .headerInner .desktopNav ul:hover a:hover {
   filter: blur(0px);
 }
-header .headerInner .desktopNav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
 header .headerInner .desktopNav ul li a {
   color: black;
-  font-size: 20px;
-  filter: drop-shadow(5px 5px 10px rgba(85, 85, 85, 0.6039215686));
+  filter: drop-shadow(0px 0px 10px rgba(164, 164, 164, 0.6039215686));
   background-color: transparent;
   text-decoration: none;
 }
@@ -175,6 +167,10 @@ header .headerInner .searchInput:focus + .searchBtn {
   width: 100%;
 }
 
+section {
+  margin-top: 40px;
+}
+
 .cartItemWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -185,6 +181,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   width: 20em;
   height: 20em;
   margin-inline: auto;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -214,9 +211,14 @@ header .headerInner .searchInput:focus + .searchBtn {
   left: 0;
   transition: all 0.75s;
   transform: translateX(-300px);
+}
+.cartItemWrapper .containerItem .itemInfo .itemInfoWrapper {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: center;
+  margin-left: 10px;
+  height: 100%;
 }
 .cartItemWrapper .containerItem .itemInfo h5 {
   color: white;
@@ -224,16 +226,183 @@ header .headerInner .searchInput:focus + .searchBtn {
 .cartItemWrapper .containerItem .itemInfo p {
   color: white;
 }
+.cartItemWrapper .containerItem .itemInfo .itemSize {
+  display: flex;
+  gap: 5px;
+}
+.cartItemWrapper .containerItem .itemInfo .itemSize .radioSizeButton label {
+  border: 1px solid rgb(186, 186, 186);
+  cursor: pointer;
+  padding: 5px;
+  color: white;
+}
+.cartItemWrapper .containerItem .itemInfo .itemSize .radioSizeButton input {
+  display: none;
+}
+.cartItemWrapper .containerItem .itemInfo .itemSize .radioSizeButton input[type=radio]:checked + label {
+  background-color: white;
+  color: black;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button {
+  --background: white;
+  --text: #fff;
+  --cart: #fff;
+  position: relative;
+  border: 1px solid var(--background);
+  background: none;
+  padding: 8px 28px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  min-width: 144px;
+  color: var(--text);
+  transform: scale(var(--scale, 1));
+  transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button:active {
+  --scale: 0.95;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-left: -8px;
+  line-height: 26px;
+  transform: translateY(var(--span-y, 0));
+  transition: transform 0.7s ease;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button span:before,
+.cartItemWrapper .containerItem .itemInfo .addToCart .button span:after {
+  content: "";
+  width: var(--w, 2px);
+  height: var(--h, 14px);
+  border-radius: 1px;
+  position: absolute;
+  left: var(--l, 8px);
+  top: var(--t, 6px);
+  background: currentColor;
+  transform: scale(0.75) rotate(var(--icon-r, 0deg)) translateY(var(--icon-y, 0));
+  transition: transform 0.65s ease 0.05s;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button span:after {
+  --w: 14px;
+  --h: 2px;
+  --l: 2px;
+  --t: 12px;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -13px 0 0 -18px;
+  transform-origin: 12px 23px;
+  transform: translateX(-120px) rotate(-18deg);
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart:before,
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart:after {
+  content: "";
+  position: absolute;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart:before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--cart);
+  bottom: 0;
+  left: 9px;
+  filter: drop-shadow(11px 0 0 var(--cart));
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart:after {
+  width: 16px;
+  height: 9px;
+  background: var(--cart);
+  left: 9px;
+  bottom: 7px;
+  transform-origin: 50% 100%;
+  transform: perspective(4px) rotateX(-6deg) scaleY(var(--fill, 0));
+  transition: transform 1.2s ease var(--fill-d);
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart svg {
+  z-index: 1;
+  width: 36px;
+  height: 26px;
+  display: block;
+  position: relative;
+  fill: none;
+  stroke: var(--cart);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button .cart svg polyline:last-child {
+  stroke: var(--tick);
+  stroke-dasharray: 10px;
+  stroke-dashoffset: var(--offset, 10px);
+  transition: stroke-dashoffset 0.4s ease var(--offset-d);
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button.loading {
+  --scale: 0.95;
+  --span-y: -32px;
+  --icon-r: 180deg;
+  --fill: 1;
+  --fill-d: 0.8s;
+  --offset: 0;
+  --offset-d: 1.73s;
+}
+.cartItemWrapper .containerItem .itemInfo .addToCart .button.loading .cart {
+  animation: cart 3.4s linear forwards 0.2s;
+}
+@keyframes cart {
+  12.5% {
+    transform: translateX(-60px) rotate(-18deg);
+  }
+  25%, 45%, 55%, 75% {
+    transform: none;
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  44%, 56% {
+    transform-origin: 12px 23px;
+  }
+  45%, 55% {
+    transform-origin: 50% 50%;
+  }
+  87.5% {
+    transform: translateX(70px) rotate(-18deg);
+  }
+  100% {
+    transform: translateX(140px) rotate(-18deg);
+  }
+}
 
 @media (max-width: 575px) {
   .container {
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 0;
     padding-left: 0;
+  }
+  .searchBox {
+    display: none;
+  }
+  .headerInner {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+  .searchBox {
+    display: none;
   }
 }
 @media (min-width: 768px) {
@@ -249,6 +418,9 @@ header .headerInner .searchInput:focus + .searchBtn {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .searchBox {
+    display: block;
   }
 }
 @media (min-width: 1400px) {

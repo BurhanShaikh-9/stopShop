@@ -57,6 +57,16 @@ export const Header = () => {
                                 <ul>
                                     <li>
                                         <Link href='#'>
+                                            Home
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href='#'>
+                                            Sale
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href='#'>
                                             Categories
                                         </Link>
                                     </li>
@@ -67,7 +77,7 @@ export const Header = () => {
                                     </li>
                                     <li>
                                         <Link href='#'>
-                                            Contact Us
+                                            Contact
                                         </Link>
                                     </li>
                                     <li>

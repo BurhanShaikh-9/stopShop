@@ -2,19 +2,25 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-import itemImg from '../../assets/images.jpeg'
+import itemImg1 from '../../assets/shirtBlack.png'
+import itemImg2 from '../../assets/shirtWhite.png'
+import { AddToCartButton } from '@/components/buttons/addToCartButton'
+import { SingleItem } from './singleItem'
+
 
 export const CartItem = () => {
 
     const [data, setData] = useState([
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
-        { name: "blackShirt", size: 'S, M, L, XL', price: '500' },
+        { name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg1 },
+        { name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg2 },
+        { name: "BlackShirt", price: '500', color: '#FF914B', image: itemImg1 },
+        { name: "BlackShirt", price: '500', color: '#00A488', image: itemImg2 },
+        { name: "BlackShirt", price: '500', color: '#FE28A9', image: itemImg1 },
+        { name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg2 },
+        { name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg1 },
     ])
+
+
 
     return (
         <React.Fragment>
@@ -22,16 +28,7 @@ export const CartItem = () => {
 
                 <div className="cartItemWrapper">
                     {data.map((item, keyId) => (
-                        <div className="containerItem" key={keyId}>
-                            <Image src={itemImg} alt="Slide 1" />
-                            <div className="itemInfo">
-
-                                <h5>{item.name}</h5>
-                                <p>{item.size}</p>
-                                <p>PKR {item.price}</p>
-
-                            </div>
-                        </div>
+                        <SingleItem itemData={item} key={keyId} />
                     ))}
 
                 </div>
