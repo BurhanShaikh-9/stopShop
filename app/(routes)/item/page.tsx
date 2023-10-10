@@ -1,10 +1,12 @@
 import { CartItemDescription } from '@/components/cartItemDescription/cartItemDescription'
 import React from 'react'
 
-export const ItemDescription = () => {
+const ItemDescription = () => {
     return (
         <React.Fragment>
             <CartItemDescription />
         </React.Fragment>
     )
 }
+
+export default ItemDescription

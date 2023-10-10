@@ -11,13 +11,13 @@ import { SingleItem } from './singleItem'
 export const CartItem = () => {
 
     const [data, setData] = useState([
-        { name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg1 },
-        { name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg2 },
-        { name: "BlackShirt", price: '500', color: '#FF914B', image: itemImg1 },
-        { name: "BlackShirt", price: '500', color: '#00A488', image: itemImg2 },
-        { name: "BlackShirt", price: '500', color: '#FE28A9', image: itemImg1 },
-        { name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg2 },
-        { name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg1 },
+        {id:0, name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg1 },
+        {id:1, name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg2 },
+        {id:2, name: "BlackShirt", price: '500', color: '#FF914B', image: itemImg1 },
+        {id:3, name: "BlackShirt", price: '500', color: '#00A488', image: itemImg2 },
+        {id:4, name: "BlackShirt", price: '500', color: '#FE28A9', image: itemImg1 },
+        {id:5, name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg2 },
+        {id:6, name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg1 },
     ])
 
 
