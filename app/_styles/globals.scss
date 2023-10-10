@@ -392,6 +392,10 @@ header {
     }
 }
 
+.bodyClass{
+    background-image: url(../../assets/Sprinkle.svg);
+}
+
 section{
     margin-top: 40px;
 }
@@ -416,7 +420,7 @@ section{
 
         &:hover {
             img {
-                transform: translate(150px, 30px) scale(1.4);
+                transform: translate(150px, 70px) scale(1.4);
             }
 
             .itemInfo {
