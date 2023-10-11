@@ -6,6 +6,7 @@ import itemImg1 from '../../assets/shirtBlack.png'
 import itemImg2 from '../../assets/shirtWhite.png'
 import { AddToCartButton } from '@/components/buttons/addToCartButton'
 import { SingleItem } from './singleItem'
+import  {Heading}  from '../headings/heading'
 
 
 export const CartItem = () => {
@@ -25,7 +26,8 @@ export const CartItem = () => {
     return (
         <React.Fragment>
             <section className='trendingSection'>
-                <h2>TRENDING</h2>
+                {/* <h2>TRENDING</h2> */}
+                <Heading headingText='TRENDING' />
                 <div className="cartItemWrapper">
                     {data.map((item, keyId) => (
                         <SingleItem itemData={item} key={keyId} uniqueId={keyId} />

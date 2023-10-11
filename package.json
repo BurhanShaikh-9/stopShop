@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-transition-group": "^4.4.7",
     "gsap": "^3.12.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
     "react-responsive-carousel": "^3.2.23",
+    "react-transition-group": "^4.4.5",
     "swiper": "^10.3.1"
   },
   "devDependencies": {

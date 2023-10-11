@@ -392,11 +392,11 @@ header {
     }
 }
 
-.bodyClass{
+.bodyClass {
     background-image: url(../../assets/Sprinkle.svg);
 }
 
-section{
+section {
     margin-top: 40px;
 }
 
@@ -502,12 +502,17 @@ section{
     }
 }
 
-.trendingSection{
-    h2{
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.headingComponent{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+   margin-bottom: 20px; 
+   font-weight: 700;
 }
+
+
+
 
 @media (max-width: 575px) {
     .container {

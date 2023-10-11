@@ -3,7 +3,7 @@ import '../_styles/globals.css'
 import type { Metadata } from 'next'
 
 import { Roboto } from 'next/font/google'
- 
+
 const roboto = Roboto({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} bodyClass`}>
-        <Header/>
+        <Header />
         {children}
-        </body>
+      </body>
     </html>
   )
 }
