@@ -502,21 +502,12 @@ section{
     }
 }
 
-// .cartItemWrapper> :nth-child(5n-4){
-//     background-color: #8300C7;
-// }
-// .cartItemWrapper> :nth-child(5n-3){
-//     background-color: #3E96F4;
-// }
-// .cartItemWrapper> :nth-child(5n-2){
-//     background-color: #FF914B;
-// }
-// .cartItemWrapper> :nth-child(5n-1){
-//     background-color: #00A488;
-// }
-// .cartItemWrapper> :nth-child(5n){
-//     background-color: #FE28A9;
-// }
+.trendingSection{
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
 
 @media (max-width: 575px) {
     .container {
