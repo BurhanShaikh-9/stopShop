@@ -9,7 +9,7 @@ export const Heading = ({ headingText }) => {
         const characterElements = document.querySelectorAll('.character');
         const positionObj = [
             { y: -10, rotation: 10 },
-            { y: 10, rotation: 10 },
+            { y: 5, rotation: 10 },
         ];
 
         characterElements.forEach((char, keyId) => {
