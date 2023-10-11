@@ -7,10 +7,16 @@ export const Heading = ({ headingText }) => {
 
     useEffect(() => {
         const characterElements = document.querySelectorAll('.character');
+        const positionObj = [
+            { y: -10, rotation: 10 },
+            { y: 10, rotation: 10 },
+        ];
 
         characterElements.forEach((char, keyId) => {
             char.addEventListener('mouseenter', () => {
-                gsap.to(char, { y: -10, rotation: 10 });
+                const randomIndex = Math.floor(Math.random() * positionObj.length);
+                const randomPosition = positionObj[randomIndex];
+                gsap.to(char, randomPosition);
             });
 
             char.addEventListener('mouseleave', () => {
@@ -21,7 +27,9 @@ export const Heading = ({ headingText }) => {
         return () => {
             characterElements.forEach((char, keyId) => {
                 char.removeEventListener('mouseenter', () => {
-                    gsap.to(char, { y: -10, rotation: 10 });
+                    const randomIndex = Math.floor(Math.random() * positionObj.length);
+                    const randomPosition = positionObj[randomIndex];
+                    gsap.to(char, randomPosition);
                 });
 
                 char.removeEventListener('mouseleave', () => {

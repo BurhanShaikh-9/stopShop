@@ -394,6 +394,9 @@ section {
   margin-bottom: 20px;
   font-weight: 700;
 }
+.headingComponent .character {
+  margin: 0 4px;
+}
 
 @media (max-width: 575px) {
   .container {
