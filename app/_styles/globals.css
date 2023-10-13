@@ -12,13 +12,15 @@
 }
 
 header {
-  position: relative;
+  position: fixed;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.125);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  top: 0;
 }
 header .headerInner {
   display: flex;
@@ -36,6 +38,7 @@ header .headerInner .desktopNav {
   background-color: white;
   color: black;
   margin: 2rem;
+  background-color: transparent;
 }
 header .headerInner .desktopNav ul {
   text-align: center;
@@ -168,10 +171,11 @@ header .headerInner .searchInput:focus + .searchBtn {
 
 .heroSection {
   background-image: url("../../assets/carousel1.jpg");
-  background-size: 100% cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 400px;
+  height: 450px;
+  background-position: center 85px;
   width: 100%;
 }
 

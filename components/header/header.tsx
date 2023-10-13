@@ -38,7 +38,7 @@ export const Header = () => {
             <div className="container">
                 <div className="headerInner">
                     <div className="logo">
-                        STOP SHOP
+                        Ethereal Essence
                     </div>
                     <div className="searchBox">
                         <input type="text" placeholder="Search anything" className="searchInput" />
@@ -84,7 +84,7 @@ export const Header = () => {
                                     </li>
                                     <li>
                                         <Link className='cartImageClass' href='#'>
-                                           <Image  src={cartIcon} alt='cartImage' />
+                                            <Image src={cartIcon} alt='cartImage' />
                                         </Link>
                                     </li>
                                 </ul>
