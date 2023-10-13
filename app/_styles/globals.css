@@ -26,6 +26,12 @@ header .headerInner {
   height: 70px;
   align-items: center;
 }
+header .headerInner .cartImageClass > img {
+  width: 25px;
+  height: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 header .headerInner .desktopNav {
   background-color: white;
   color: black;
@@ -160,10 +166,12 @@ header .headerInner .searchInput:focus + .searchBtn {
   background: #fff;
 }
 
-.carousel-container .swiper {
-  z-index: 1;
-}
-.carousel-container .carouselSlider img {
+.heroSection {
+  background-image: url("../../assets/carousel1.jpg");
+  background-size: 100% cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 400px;
   width: 100%;
 }
 
@@ -394,6 +402,9 @@ section {
 }
 .headingComponent .character {
   padding: 0 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: rgba(255, 0, 0, 0.1);
   text-transform: uppercase;
   font-weight: 700;

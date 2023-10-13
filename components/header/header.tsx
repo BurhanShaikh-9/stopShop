@@ -4,6 +4,8 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import cartIcon from '../../assets/cartIcon.gif'
+import Image from 'next/image'
 
 export const Header = () => {
 
@@ -81,15 +83,15 @@ export const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='#'>
-                                            Cart
+                                        <Link className='cartImageClass' href='#'>
+                                           <Image  src={cartIcon} alt='cartImage' />
                                         </Link>
                                     </li>
                                 </ul>
                             </nav>
-                       )
+                        )
 
-                    } 
+                    }
 
 
                 </div>

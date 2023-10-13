@@ -8,8 +8,8 @@ import { CartItem } from '@/components/cartItem/trendingItems'
 export default function Home() {
   return (
     <React.Fragment>
+      <HeroSection />
       <div className="container">
-        <HeroSection />
         <CartItem />
       </div>
     </React.Fragment>

@@ -198,7 +198,11 @@ header {
         height: 70px;
         align-items: center;
 
-
+        .cartImageClass> img{
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
         .desktopNav {
 
 
@@ -380,17 +384,26 @@ header {
     }
 }
 
-.carousel-container {
-    .swiper {
-        z-index: 1;
-    }
 
-    .carouselSlider {
-        img {
-            width: 100%;
-        }
-    }
+.heroSection{
+    background-image: url('../../assets/carousel1.jpg');
+    background-size: 100% cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 400px;
+    width: 100%;
 }
+// .carousel-container {
+//     .swiper {
+//         z-index: 1;
+//     }
+
+//     .carouselSlider {
+//         img {
+//             width: 100%;
+//         }
+//     }
+// }
 
 .bodyClass {
     background-image: url(../../assets/Sprinkle.svg);

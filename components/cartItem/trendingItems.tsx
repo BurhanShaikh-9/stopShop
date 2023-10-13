@@ -26,11 +26,10 @@ export const CartItem = () => {
     return (
         <React.Fragment>
             <section className='trendingSection'>
-                {/* <h2>TRENDING</h2> */}
                 <Heading headingText='TRENDING' />
                 <div className="cartItemWrapper">
                     {data.map((item, keyId) => (
-                        <SingleItem itemData={item} key={keyId} uniqueId={keyId} />
+                        <SingleItem  key={keyId} itemData={item} uniqueId={keyId} />
                     ))}
 
                 </div>
