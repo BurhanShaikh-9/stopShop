@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import cartIcon from '../../assets/cartIcon.gif'
 import Image from 'next/image'
-
+import logo from '../../assets/logo6.png'
 export const Header = () => {
 
     const [isMobileNav, setIsMobileNav] = useState(false);
@@ -37,9 +37,9 @@ export const Header = () => {
         <header>
             <div className="container">
                 <div className="headerInner">
-                    <div className="logo">
-                        Ethereal Essence
-                    </div>
+                    <Link href="/" className="logo">
+                        <Image src={logo} alt="logo"/>
+                    </Link>
                     <div className="searchBox">
                         <input type="text" placeholder="Search anything" className="searchInput" />
                         <a href="#" className="searchBtn">

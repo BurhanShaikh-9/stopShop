@@ -4,6 +4,7 @@ import React from 'react'
 import { AddToCartButton } from '../buttons/addToCartButton'
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface SingleItemProps {
     itemData: {
@@ -34,7 +35,7 @@ interface SingleItemProps {
                             <label htmlFor={`sSize${uniqueId}`}>S</label>
                         </div>
                         <div className="radioSizeButton">
-                            <input type="radio" id={`mSize${uniqueId}`} name='radioSize' required/>
+                            <input type="radio" id={`mSize${uniqueId}`} name='radioSize' required />
                             <label htmlFor={`mSize${uniqueId}`}>M</label>
                         </div>
                         <div className="radioSizeButton">
@@ -51,6 +52,7 @@ interface SingleItemProps {
                     <p>PKR {itemData.price}</p>
 
                     <AddToCartButton />
+                    <Link className='productViewButton' href="/item"> Description </Link>
                 </div>
 
             </div>
