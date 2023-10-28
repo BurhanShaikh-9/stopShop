@@ -1,4 +1,5 @@
 import { Header } from '@/components/header/header'
+import { Footer } from '@/components/footer/footer'
 import '../_styles/globals.css'
 import type { Metadata } from 'next'
 
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${roboto.className} bodyClass`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
