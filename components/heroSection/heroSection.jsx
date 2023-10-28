@@ -10,7 +10,7 @@ import { Pagination } from 'swiper/modules';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image'
-// import carouselImg1 from '../../assets/carousel1.jpg'
+import parallexImg1 from '../../assets/parallexImg1.png'
 // import carouselImg2 from '../../assets/carousel2.jpg'
 // import carouselImg3 from '../../assets/carousel3.jpg'
 // import carouselImg4 from '../../assets/carousel4.jpg'
@@ -21,7 +21,10 @@ export const HeroSection = () => {
         <React.Fragment>
             <section>
                 <div className="heroSection">
-
+                    <div className="parralexSection">
+                        
+                        <Image src={parallexImg1} />
+                    </div>
                 </div>
                 {/* <div className="carousel-container">
 
