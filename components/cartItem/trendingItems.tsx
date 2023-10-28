@@ -18,7 +18,6 @@ export const CartItem = () => {
         { id: 3, name: "BlackShirt", price: '500', color: '#00A488', image: itemImg2 },
         { id: 4, name: "BlackShirt", price: '500', color: '#FE28A9', image: itemImg1 },
         { id: 5, name: "BlackShirt", price: '500', color: '#8300C7', image: itemImg2 },
-        { id: 6, name: "BlackShirt", price: '500', color: '#3E96F4', image: itemImg1 },
     ])
 
 
