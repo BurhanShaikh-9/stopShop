@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import cartIcon from '../../assets/cartIcon.gif'
+import userIcon from '../../assets/userIcon.gif'
 import Image from 'next/image'
 import logo from '../../assets/logo6.png'
 export const Header = () => {
@@ -85,6 +86,11 @@ export const Header = () => {
                                     <li>
                                         <Link className='cartImageClass' href='#'>
                                             <Image src={cartIcon} alt='cartImage' />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className='userImageClass' href='#'>
+                                            <Image src={userIcon} alt='userImage' />
                                         </Link>
                                     </li>
                                 </ul>
