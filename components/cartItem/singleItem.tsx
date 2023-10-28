@@ -52,7 +52,8 @@ interface SingleItemProps {
                     <p>PKR {itemData.price}</p>
 
                     <AddToCartButton />
-                    <Link className='productViewButton' href="/item"> Description </Link>
+                    <Link className='productViewButton' href={`${uniqueId}`}>Description</Link>
+                    {/* <Link className='productViewButton' href="/item"> Description </Link> */}
                 </div>
 
             </div>

@@ -34,6 +34,9 @@ header .headerInner .cartImageClass > img {
   -o-object-fit: contain;
      object-fit: contain;
 }
+header .headerInner .userImageClass {
+  filter: none !important;
+}
 header .headerInner .desktopNav {
   background-color: white;
   color: black;
@@ -173,6 +176,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   background-image: url("../../assets/carousel1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 450px;
   background-position: center 35px;
   width: 100%;
@@ -191,8 +195,29 @@ header .headerInner .searchInput:focus + .searchBtn {
      object-fit: contain;
 }
 
+.marginTop {
+  margin-top: 70px;
+}
+
 .bodyClass {
   background-image: url(../../assets/Sprinkle.svg);
+}
+
+.cartItemDescInner .section {
+  height: 100vh;
+}
+.cartItemDescInner .cartDescHeading {
+  font-size: 80px;
+  text-align: center;
+}
+.cartItemDescInner .ItemPicture {
+  display: flex;
+  justify-content: center;
+}
+.cartItemDescInner .ItemPicture img {
+  width: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 section {

@@ -193,6 +193,7 @@ header {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 100%;
     top: 0;
+    // height: 70px;
 
     .headerInner {
         display: flex;
@@ -204,6 +205,9 @@ header {
             width: 25px;
             height: 25px;
             object-fit: contain;
+        }
+        .userImageClass{
+            filter: none !important;
         }
 
         // .userImageClass {
@@ -403,7 +407,7 @@ body {
     background-image: url('../../assets/carousel1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
+    background-attachment: fixed;
     height: 450px;
     background-position: center 35px;
     width: 100%;
@@ -425,8 +429,33 @@ body {
 }
 
 
+.marginTop{
+    margin-top: 70px;
+}
+
+
 .bodyClass {
     background-image: url(../../assets/Sprinkle.svg);
+}
+
+.cartItemDescInner{
+    .section{
+        height: calc(50px -100vh);
+    }
+    .cartDescHeading{
+        font-size: 80px;
+        text-align: center;
+    }
+    .ItemPicture{
+        display: flex;
+        justify-content: center;
+        top: 0;
+        position: relative;
+        img{
+            width: 400px;
+            object-fit: contain;
+        }
+    }
 }
 
 section {

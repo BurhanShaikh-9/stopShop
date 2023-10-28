@@ -89,7 +89,7 @@ export const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className='userImageClass' href='#'>
+                                        <Link className='cartImageClass userImageClass' href='#'>
                                             <Image src={userIcon} alt='userImage' />
                                         </Link>
                                     </li>
