@@ -438,16 +438,20 @@ body {
 .bodyClass {
     background-image: url(../../assets/Sprinkle.svg);
 }
+
+
 .cartItemDescContainer{
     height: calc(100vh - 70px);
     // overflow-y: hidden;
+}
+
     .ItemPicture {
-        // top: 50%;
-        // left: 50%;
-        // position: fixed;
-        // transform: translate(-50%,-25%);
-        display: flex;
-        justify-content: center;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-25%);
+        // display: flex;
+        // justify-content: center;
 
         img {
             width: 400px;
@@ -455,47 +459,22 @@ body {
         }
     }
     .cartItemDescInner {
-        scroll-snap-type: y mandatory;
-        height: 100%;
-        overflow-y: scroll;
-        // overflow-y: hidden;
-
-        .section {
+         height: calc(100vh);  
+        //  scroll-snap-type: y mandatory;
+        //  overflow-y: scroll;
+         .section {
             height: 100%;
-            scroll-snap-align:start;
+            // scroll-snap-align: start;
         }
-    
-        
-    
-        // height: 100%;
     
         .cartDescHeading {
             font-size: 80px;
             text-align: center;
+            padding-top: 80px;
         }
-    
-      
-    
-        // .panel {
-        //     position: fixed;
-        //     width: 100%;
-        //     height: 100%;
-        //     top: 0;
-        //     left: 0;
-        //   }
-    
-        //   section:not(.first) {
-        //     opacity: 0;
-        //     visibility: hidden;
-        //     transform: scale(0.8);
-        //   } 
+     
     }
-}
 
-
-// section {
-//     margin-top: 40px;
-// }
 
 
 .cartItemWrapper {

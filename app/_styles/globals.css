@@ -206,27 +206,29 @@ header .headerInner .searchInput:focus + .searchBtn {
 .cartItemDescContainer {
   height: calc(100vh - 70px);
 }
-.cartItemDescContainer .ItemPicture {
-  display: flex;
-  justify-content: center;
+
+.ItemPicture {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -25%);
 }
-.cartItemDescContainer .ItemPicture img {
+.ItemPicture img {
   width: 400px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.cartItemDescContainer .cartItemDescInner {
-  scroll-snap-type: y mandatory;
-  height: 100%;
-  overflow-y: scroll;
+
+.cartItemDescInner {
+  height: 100vh;
 }
-.cartItemDescContainer .cartItemDescInner .section {
+.cartItemDescInner .section {
   height: 100%;
-  scroll-snap-align: start;
 }
-.cartItemDescContainer .cartItemDescInner .cartDescHeading {
+.cartItemDescInner .cartDescHeading {
   font-size: 80px;
   text-align: center;
+  padding-top: 80px;
 }
 
 .cartItemWrapper {
