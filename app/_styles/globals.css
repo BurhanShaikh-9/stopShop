@@ -203,25 +203,30 @@ header .headerInner .searchInput:focus + .searchBtn {
   background-image: url(../../assets/Sprinkle.svg);
 }
 
-.cartItemDescInner .section {
-  height: 100vh;
+.cartItemDescContainer {
+  height: calc(100vh - 70px);
 }
-.cartItemDescInner .cartDescHeading {
-  font-size: 80px;
-  text-align: center;
-}
-.cartItemDescInner .ItemPicture {
+.cartItemDescContainer .ItemPicture {
   display: flex;
   justify-content: center;
 }
-.cartItemDescInner .ItemPicture img {
+.cartItemDescContainer .ItemPicture img {
   width: 400px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-
-section {
-  margin-top: 40px;
+.cartItemDescContainer .cartItemDescInner {
+  scroll-snap-type: y mandatory;
+  height: 100%;
+  overflow-y: scroll;
+}
+.cartItemDescContainer .cartItemDescInner .section {
+  height: 100%;
+  scroll-snap-align: start;
+}
+.cartItemDescContainer .cartItemDescInner .cartDescHeading {
+  font-size: 80px;
+  text-align: center;
 }
 
 .cartItemWrapper {
