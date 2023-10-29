@@ -24,7 +24,7 @@ export const CartItem = () => {
 
     return (
         <React.Fragment>
-            <section className='trendingSection'>
+            <div className='trendingSection'>
                 <Heading headingText='TRENDING' />
                 <div className="cartItemWrapper">
                     {data.map((item, keyId) => (
@@ -32,7 +32,7 @@ export const CartItem = () => {
                     ))}
 
                 </div>
-            </section>
+            </div>
 
         </React.Fragment>
     )

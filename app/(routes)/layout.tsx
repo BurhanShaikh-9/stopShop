@@ -3,10 +3,7 @@ import { Footer } from '@/components/footer/footer'
 import '../_styles/globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import { gsap } from 'gsap/gsap-core'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
 
 const roboto = Roboto({
   weight: ['400', '700'],

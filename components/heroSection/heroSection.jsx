@@ -19,11 +19,11 @@ import parallexImg1 from '../../assets/parallexImg1.png'
 export const HeroSection = () => {
     return (
         <React.Fragment>
-            <section>
+            <div>
                 <div className="heroSection">
                     <div className="parralexSection">
                         
-                        <Image src={parallexImg1} />
+                        <Image src={parallexImg1} alt='paralexImage' />
                     </div>
                 </div>
                 {/* <div className="carousel-container">
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div> */}
-            </section>
+            </div>
         </React.Fragment>
     )
 }

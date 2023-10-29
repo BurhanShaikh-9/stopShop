@@ -176,7 +176,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   background-image: url("../../assets/carousel1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed !important;
   height: 450px;
   background-position: center 35px;
   width: 100%;
@@ -456,7 +456,6 @@ header .headerInner .searchInput:focus + .searchBtn {
   color: rgba(255, 0, 0, 0.1);
   text-transform: uppercase;
   font-weight: 700;
-  background-size: contain;
   background-attachment: fixed;
   background-image: url("../../assets/clothBackground.jpg");
   -webkit-background-clip: text;
