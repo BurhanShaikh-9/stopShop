@@ -5,12 +5,19 @@ import itemImg1 from '../../assets/shirtBlack.png'
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-// import { useRouter } from "next/router";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { useRouter } from 'next/navigation'
 
 
 
 export const CartItemDescription = () => {
+
+  // const useRouter = useRouterStore((state:any) => state.useRouter);
+  const router = useRouter();
+  console.log(router, 'routerrr');
+
+
+
   // const router = useRouter();
   const mainContainerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,13 +25,9 @@ export const CartItemDescription = () => {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(true);
-
 
   useEffect(() => {
-
     const section1 = section1Ref.current;
-
     if (section1) {
       const scrollTrigger = gsap.to(pinnedItemRef.current, {
         y: 650,
@@ -48,18 +51,14 @@ export const CartItemDescription = () => {
         scrollTrigger.kill();
       };
     }
-
   }, [pinnedItemRef.current]);
 
 
   useEffect(() => {
-
-
-
     const panels = [section1Ref.current, section2Ref.current, section3Ref.current];
     let observer = ScrollTrigger.normalizeScroll(true) || null;
     let scrollTween: any;
-  
+
     const handleTouchStart = (e: any) => {
       if (scrollTween) {
         e.preventDefault();
@@ -73,7 +72,7 @@ export const CartItemDescription = () => {
       scrollTween = gsap.to(window, {
         scrollTo: { y: i * innerHeight, autoKill: false },
         onStart: () => {
-          observer?.disable(); 
+          observer?.disable();
           observer?.enable();
         },
         duration: 1,
@@ -97,22 +96,29 @@ export const CartItemDescription = () => {
       snap: 1 / (panels.length - 1),
     });
 
-    
+
     return () => {
       if (scrollTween) {
         scrollTween.kill();
       }
       snapTrigger.kill();
       document.removeEventListener("touchstart", handleTouchStart, { capture: true });
-      if(observer){
+      if (observer) {
         observer.disable();
       }
     };
-  
+
 
   }, [])
 
-
+  useEffect(() => {
+    return () => {
+      // Clean up any ScrollTrigger instances
+      ScrollTrigger.getAll().forEach((instance) => {
+        instance.kill(true); // true parameter will remove all associated animations
+      });
+    };
+  }, []);
 
   return (
     <React.Fragment>
