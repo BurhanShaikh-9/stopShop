@@ -456,7 +456,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   color: rgba(255, 0, 0, 0.1);
   text-transform: uppercase;
   font-weight: 700;
-  background-attachment: fixed;
+  background-position: right;
   background-image: url("../../assets/clothBackground.jpg");
   -webkit-background-clip: text;
   animation: background-text-animation 15s linear infinite;

@@ -116,9 +116,9 @@ export const CartItemDescription = () => {
 
   useEffect(() => {
     return () => {
-      // Clean up any ScrollTrigger instances
+
       ScrollTrigger.getAll().forEach((instance) => {
-        instance.kill(true); // true parameter will remove all associated animations
+        instance.kill(true);
       });
     };
   }, []);

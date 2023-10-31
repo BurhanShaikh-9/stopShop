@@ -593,7 +593,9 @@ body {
         text-transform: uppercase;
         font-weight: 700;
         // background-size: 160px;
-        background-attachment: fixed;
+        // background-attachment: fixed;
+        background-position: right;
+
         background-image: url('../../assets/clothBackground.jpg');
         -webkit-background-clip: text;
         animation: background-text-animation 15s linear infinite;
