@@ -29,8 +29,8 @@ export const CartItemDescription = () => {
   useEffect(() => {
     const section1 = section1Ref.current;
     if (section1) {
-      const windowHeight = window.innerHeight; // Get the window's height
-      const sectionHeight = section1.clientHeight; // Get the height of the "BLACK SHIRT" section
+      const windowHeight = window.innerHeight; 
+      const sectionHeight = section1.clientHeight; 
       const centerYOffset = (windowHeight - sectionHeight) / 2;
       const scrollTrigger = gsap.to(pinnedItemRef.current, {
         y: centerYOffset + 550,
