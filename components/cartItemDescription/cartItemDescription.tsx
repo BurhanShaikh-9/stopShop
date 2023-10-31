@@ -29,8 +29,11 @@ export const CartItemDescription = () => {
   useEffect(() => {
     const section1 = section1Ref.current;
     if (section1) {
+      const windowHeight = window.innerHeight; // Get the window's height
+      const sectionHeight = section1.clientHeight; // Get the height of the "BLACK SHIRT" section
+      const centerYOffset = (windowHeight - sectionHeight) / 2;
       const scrollTrigger = gsap.to(pinnedItemRef.current, {
-        y: 650,
+        y: centerYOffset + 550,
         duration: 8,
         scrollTrigger: {
           trigger: section1,
@@ -38,11 +41,11 @@ export const CartItemDescription = () => {
           end: () => `+=${section1.clientHeight}`,
           scrub: 1,
           toggleActions: "restart none none none",
-          markers: {
-            startColor: "purple",
-            endColor: "fuchsia",
-            fontSize: "2rem"
-          }
+          // markers: {
+          //   startColor: "purple",
+          //   endColor: "fuchsia",
+          //   fontSize: "2rem"
+          // }
         }
       });
 
@@ -123,7 +126,7 @@ export const CartItemDescription = () => {
   return (
     <React.Fragment>
       <div ref={containerRef} className="cartItemDescInner">
-        <section className="section panel" style={{ backgroundColor: 'green' }} ref={section1Ref}>
+        <section className="section panel" ref={section1Ref}>
           <div className="cartDescHeading ">
             <p>BLACK SHIRT</p>
           </div>
@@ -131,14 +134,14 @@ export const CartItemDescription = () => {
             <Image src={itemImg1} alt="Item Image" />
           </div>
         </section>
-        <section className="section panel" style={{ backgroundColor: 'blue' }} ref={section2Ref}>
+        <section className="section panel" ref={section2Ref}>
           <div className="cartDescHeading ">
             <p>QUALITY</p>
           </div>
         </section>
-        <section className="section panel" style={{ backgroundColor: 'purple' }} ref={section3Ref}>
+        <section className="section panel" ref={section3Ref}>
           <div className="cartDescHeading " >
-            <p>Grey SHIRT</p>
+            <p>DESCRIPTION</p>
           </div>
         </section>
       </div>

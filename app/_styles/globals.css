@@ -498,6 +498,9 @@ header .headerInner .searchInput:focus + .searchBtn {
   .character {
     font-size: 50px;
   }
+  .cartItemDescInner .cartDescHeading {
+    font-size: 37px;
+  }
 }
 @media (min-width: 576px) {
   .container {
