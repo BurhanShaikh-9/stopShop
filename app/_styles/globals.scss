@@ -640,6 +640,7 @@ body {
       
       section {
         display: flex;
+        overflow: hidden;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -775,13 +776,14 @@ body {
           margin-bottom: 20px;
           
           input {
-            width: 80%;
+            width: 100%;
             outline: none;
+            max-width: 228px;
             border: none;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.2);
             padding: 8px 10px;
-            padding-left: 40px;
+            padding-left: 20px;
             border-radius: 15px;
             color: #fff;
             font-size: 16px;
@@ -793,10 +795,17 @@ body {
             top: 8px;
             right: 10px;
             display: inline-block;
+            cursor: pointer;
             width: 20px;
+            border: none;
             height: 20px;
-            background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+            background-color: transparent;
+            // background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
             transition: 0.5s;
+            svg{
+                height: 100%;
+                width: 100%;
+            }
       }
               
             .view {
@@ -813,13 +822,13 @@ body {
           }
           
           .signInButton {
-            width: 80%;
+            width: 100%;
             outline: none;
             border: none;
             // border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 10px;
-            padding-left: 40px;
+            // background: rgba(255, 255, 255, 0.2);
+            // padding: 8px 10px;
+            // padding-left: 40px;
             border-radius: 15px;
             // color: #fff;
             font-size: 16px;
@@ -827,7 +836,7 @@ body {
 
             background: #fff;
             color: #111;
-            max-width: 100px;
+            // max-width: 100px;
             padding: 8px 10px;
             box-shadow: none;
             letter-spacing: 1px;

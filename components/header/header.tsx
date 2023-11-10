@@ -59,7 +59,7 @@ export const Header = () => {
                             <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
                                 <ul>
                                     <li>
-                                        <Link href='#'>
+                                        <Link href='/'>
                                             Home
                                         </Link>
                                     </li>
@@ -89,7 +89,7 @@ export const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className='cartImageClass userImageClass' href='#'>
+                                        <Link className='cartImageClass userImageClass' href='/login'>
                                             <Image src={userIcon} alt='userImage' />
                                         </Link>
                                     </li>

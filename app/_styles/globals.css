@@ -486,6 +486,7 @@ header .headerInner .searchInput:focus + .searchBtn {
 }
 .LoginMain section {
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -607,13 +608,14 @@ header .headerInner .searchInput:focus + .searchBtn {
   margin-bottom: 20px;
 }
 .LoginMain .form .inputBx input {
-  width: 80%;
+  width: 100%;
   outline: none;
+  max-width: 228px;
   border: none;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
   padding: 8px 10px;
-  padding-left: 40px;
+  padding-left: 20px;
   border-radius: 15px;
   color: #fff;
   font-size: 16px;
@@ -624,10 +626,16 @@ header .headerInner .searchInput:focus + .searchBtn {
   top: 8px;
   right: 10px;
   display: inline-block;
+  cursor: pointer;
   width: 20px;
+  border: none;
   height: 20px;
-  background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+  background-color: transparent;
   transition: 0.5s;
+}
+.LoginMain .form .inputBx .password-control svg {
+  height: 100%;
+  width: 100%;
 }
 .LoginMain .form .inputBx .view {
   background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
@@ -639,17 +647,13 @@ header .headerInner .searchInput:focus + .searchBtn {
   left: 13px;
 }
 .LoginMain .form .inputBx .signInButton {
-  width: 80%;
+  width: 100%;
   outline: none;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px 10px;
-  padding-left: 40px;
   border-radius: 15px;
   font-size: 16px;
   background: #fff;
   color: #111;
-  max-width: 100px;
   padding: 8px 10px;
   box-shadow: none;
   letter-spacing: 1px;
