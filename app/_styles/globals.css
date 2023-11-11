@@ -602,6 +602,9 @@ header .headerInner .searchInput:focus + .searchBtn {
   letter-spacing: 2px;
   margin-bottom: 30px;
 }
+.LoginMain .form .invalidInput {
+  color: red;
+}
 .LoginMain .form .inputBx {
   position: relative;
   width: 100%;
@@ -664,6 +667,13 @@ header .headerInner .searchInput:focus + .searchBtn {
   background: linear-gradient(115deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.25));
   color: #fff;
   transition: 0.5s;
+}
+.LoginMain .form .inputBx .buttonDisabled {
+  background-color: grey;
+  cursor: default;
+}
+.LoginMain .form .inputBx .buttonDisabled:hover {
+  background-color: grey;
 }
 .LoginMain .form .inputBx input::-moz-placeholder {
   color: #fff;
