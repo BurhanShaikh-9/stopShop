@@ -1,6 +1,6 @@
 
 "use client"
-import AuthService from '@/services/authService'
+import AuthService from '@/services/apiRoutes/authService'
 import React, { useState } from 'react'
 import {  PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
 import logo from '../../assets/logo6.png'
@@ -37,7 +37,7 @@ export const LoginComponent = () => {
             .then((res) => res.json())
             .then((res) => {
                 // console.log(res.cookies.get('token'),'cookieee');
-                // setTokenCookies(res.token)
+                setTokenCookies(res.token)
                 console.log(res, 'response');
             })
             .catch((err) => {

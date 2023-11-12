@@ -1,6 +1,6 @@
 
 "use client"
-import AuthService from '@/services/authService'
+import AuthService from '@/services/apiRoutes/authService'
 import React, { useState } from 'react'
 import { PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
 import logo from '../../assets/logo6.png'

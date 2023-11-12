@@ -1,5 +1,5 @@
-import { baseUrl } from "./constants"
-import { jsonContentType } from "./requestOptions"
+import { baseUrl } from "../constants"
+import { jsonContentType } from "../requestOptions"
 
 interface LoginData {
     email: string;
@@ -12,9 +12,13 @@ interface SignUpData {
 }
 
 const AuthService = () => {
+  
+  
     const LoginApi = (data: LoginData) => {
         return fetch(`${baseUrl}/signIn`, jsonContentType('POST', data))
     }
+
+
     const SignupApi = (data: SignUpData) => {
         return fetch(`${baseUrl}/user`, jsonContentType('POST', data))
     }
