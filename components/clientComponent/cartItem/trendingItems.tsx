@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-import itemImg1 from '../../assets/shirtBlack.png'
-import itemImg2 from '../../assets/shirtWhite.png'
-import { AddToCartButton } from '@/components/buttons/addToCartButton'
+import itemImg1 from '../../../assets/shirtBlack.png'
+import itemImg2 from '../../../assets/shirtWhite.png'
+// import { AddToCartButton } from '../reusable/buttons/addToCartButton'
 import { SingleItem } from './singleItem'
-import  {Heading}  from '../headings/heading'
+import  {Heading}  from '../reusable/headings/heading'
 
 
 export const CartItem = () => {

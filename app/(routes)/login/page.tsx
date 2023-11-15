@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {LoginComponent} from '../../../components/registration/login'
+import {LoginComponent} from '../../../components/clientComponent/registration/login'
 
 
 const LoginPage = () => {

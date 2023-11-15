@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
-import itemImg1 from '../../assets/shirtBlack.png'
+import itemImg1 from '../../../assets/shirtBlack.png'
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';

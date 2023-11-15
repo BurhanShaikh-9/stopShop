@@ -1,4 +1,4 @@
-import { CartItemDescription } from '@/components/cartItemDescription/cartItemDescription'
+import { CartItemDescription } from '../../../components/clientComponent/cartItemDescription/cartItemDescription'
 import React from 'react'
 import { Pacifico } from 'next/font/google'
 

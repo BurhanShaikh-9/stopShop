@@ -1,21 +1,22 @@
 
 "use client"
-import AuthService from '@/services/apiRoutes/authService'
+import AuthService from '../../../services/apiRoutes/authService'
 import React, { useState } from 'react'
-import {  PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
+import { PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
 import logo from '../../assets/logo6.png'
-import TokenService from '@/services/tokenService'
+import TokenService from '../../../services/tokenService'
 import Link from 'next/link'
 import { emailRegex } from '@/services/regex'
 
-export const LoginComponent = () => {
-    const { LoginApi } = AuthService();
-    const {setTokenCookies} = TokenService();
+export const SignupComponent = () => {
+    const { SignupApi } = AuthService();
+    const { setTokenCookies } = TokenService();
     const [isEmailValid, setIsEmailValid] = useState(true);
 
     const [loginData, setLoginData] = useState({
         email: '',
-        password: ''
+        password: '',
+        username: ''
     })
 
     const onChangeInput = (e: any) => {
@@ -33,11 +34,11 @@ export const LoginComponent = () => {
     const onFormSubmit = (e: any) => {
         e.preventDefault();
         console.log(loginData, 'dataa');
-        LoginApi(loginData)
+        SignupApi(loginData)
             .then((res) => res.json())
             .then((res) => {
                 // console.log(res.cookies.get('token'),'cookieee');
-                setTokenCookies(res.token)
+                // setTokenCookies(res.token)
                 console.log(res, 'response');
             })
             .catch((err) => {
@@ -45,7 +46,10 @@ export const LoginComponent = () => {
             })
     }
 
-    const [isPassword, setIsPassword] = useState(true)
+    const [isPassword, setIsPassword] = useState(true);
+
+
+
 
     return (
         <React.Fragment>
@@ -70,22 +74,26 @@ export const LoginComponent = () => {
                                 <h2>ETHHEERAL ESSENCE</h2>
                                 <form onSubmit={onFormSubmit}>
                                     <div className="inputBx">
+                                        <input type="text" name='username' required onChange={onChangeInput} />
+                                        <span>Name</span>
+                                        {/* <i className="fas fa-user-circle"></i> */}
+                                    </div>
+                                    <div className="inputBx">
                                         <input type="text" name='email' required onChange={onChangeInput} />
                                         <span>Email</span>
-                                        <i className="fas fa-user-circle"></i>
+                                        {/* <i className="fas fa-user-circle"></i> */}
                                     </div>
                                     <div className="inputBx password">
                                         <input id="password-input" type={isPassword ? 'password' : 'text'} name="password" required onChange={onChangeInput} />
                                         <span>Password</span>
-                                        <button className="password-control" onClick={(e) => {setIsPassword(!isPassword); e.preventDefault()}} >
+                                        <button className="password-control" onClick={(e) => { setIsPassword(!isPassword); e.preventDefault() }} >
                                             {
                                                 isPassword ?
-                                                <PiEyeClosedDuotone />
+                                                    <PiEyeClosedDuotone />
                                                     :
-                                                <PiEyeDuotone />
+                                                    <PiEyeDuotone />
                                             }
                                         </button>
-                                        {/* <i className="fas fa-key" /> */}
                                     </div>
                                     {
                                         !isEmailValid &&
@@ -95,8 +103,7 @@ export const LoginComponent = () => {
                                         <button className={`signInButton ${!isEmailValid && 'buttonDisabled'}`} disabled={!isEmailValid}>Login</button>
                                     </div>
                                 </form>
-                                <p>Forgot password? <a href="#">Click Here</a></p>
-                                <p>Don't have an account <Link href="/signup">Sign up</Link></p>
+                                <p>have an account <Link href="/login">Login</Link></p>
                             </div>
                         </div>
 

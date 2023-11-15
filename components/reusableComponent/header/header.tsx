@@ -4,10 +4,10 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { RxHamburgerMenu } from 'react-icons/rx'
-import cartIcon from '../../assets/cartIcon.gif'
-import userIcon from '../../assets/userIcon.gif'
+import cartIcon from '../../../assets/cartIcon.gif'
+import userIcon from '../../../assets/userIcon.gif'
 import Image from 'next/image'
-import logo from '../../assets/logo6.png'
+import logo from '../../../assets/logo6.png'
 export const Header = () => {
 
     const [isMobileNav, setIsMobileNav] = useState(false);
@@ -38,7 +38,7 @@ export const Header = () => {
         <header>
             <div className="container">
                 <div className="headerInner">
-                    <Link href="/" className="logo">
+                    <Link href="/shop" className="logo">
                         <Image src={logo} alt="logo"/>
                     </Link>
                     <div className="searchBox">
@@ -59,7 +59,7 @@ export const Header = () => {
                             <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
                                 <ul>
                                     <li>
-                                        <Link href='/'>
+                                        <Link href='/shop'>
                                             Home
                                         </Link>
                                     </li>

@@ -2,9 +2,12 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap';
 
-export const Heading = ({ headingText }) => {
-    const characters = headingText.split('');
+interface HeadingProps {
+    headingText: string;
+  }
+export const Heading : React.FC<HeadingProps>  = ({ headingText }) => {
 
+    const characters = headingText.split('');
     useEffect(() => {
         const characterElements = document.querySelectorAll('.character');
         const positionObj = [

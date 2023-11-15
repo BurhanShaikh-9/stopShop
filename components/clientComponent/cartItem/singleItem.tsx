@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { AddToCartButton } from '../buttons/addToCartButton'
+import { AddToCartButton } from '../../clientComponent/reusable/buttons/addToCartButton'
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
