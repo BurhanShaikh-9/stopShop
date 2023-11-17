@@ -3,7 +3,8 @@ import { Footer } from '../../components/reusableComponent/footer/footer'
 import '../_styles/globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-
+import { cookies } from 'next/headers';
+import { ClientCookiesProvider } from '../../components/cookiesComponent/cookiesClient';
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} bodyClass`}>
-        <Header />
-        {children}
-        <Footer />
+        <ClientCookiesProvider value={cookies().getAll()}>
+          <Header />
+          {children}
+          <Footer />
+        </ClientCookiesProvider>
       </body>
     </html>
   )
