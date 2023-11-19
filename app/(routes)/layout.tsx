@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { cookies } from 'next/headers';
 import { ClientCookiesProvider } from '../../components/cookiesComponent/cookiesClient';
-
+// import {isAuthenticated} from '../../services/authentication'
 const roboto = Roboto({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
@@ -26,6 +26,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  // console.log(isAuthenticated(), 'authhh');
+  
   return (
     <html lang="en">
       <body className={`${roboto.className} bodyClass`}>

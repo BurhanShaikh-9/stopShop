@@ -31,7 +31,7 @@ const TokenService = () => {
             }
         )
     }
-    const getUserObject  = () => {
+    const getUserObject = () => {
         const userObj = cookies.get('user');
         return userObj ? JSON.parse(userObj) : null
     }
@@ -41,7 +41,21 @@ const TokenService = () => {
         return token ? token : null
     }
 
-    return { setTokenCookies, getTokenCookies, setUserObject, getUserObject }
+    const isAuthenticated = () => {
+        const userObj = cookies.get('user');
+        const obj = userObj ? JSON.parse(userObj) : null;
+        if (obj) {
+
+            const isUserType = obj.userType;
+            if (isUserType === 2) {
+                return true
+            }
+            return false
+        }
+        return false
+    }
+
+    return { setTokenCookies, getTokenCookies, setUserObject, getUserObject, isAuthenticated }
 }
 
 export default TokenService
