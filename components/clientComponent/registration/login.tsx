@@ -33,7 +33,6 @@ export const LoginComponent = () => {
 
         setLoginData({ ...loginData, [fieldName]: fieldValue });
     };
-    
     const onFormSubmit = (e: any) => {
         e.preventDefault();
         console.log(loginData, 'dataa');
@@ -41,7 +40,7 @@ export const LoginComponent = () => {
             .then((res) => res.json())
             .then((res) => {
                 setTokenCookies(res.token)
-                const {__v, email, username, phone, image, ...userData} = res.user;
+                const {__v, email, username, image, phone, ...userData} = res.user;
                 setUserObject(JSON.stringify(userData))
                 console.log(res, 'response');
             })
