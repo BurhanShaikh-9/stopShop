@@ -54,7 +54,8 @@ export const CartItemDescription = () => {
         scrollTrigger.kill();
       };
     }
-  }, [pinnedItemRef.current]);
+  }, []);
+  // }, [pinnedItemRef.current]);
 
 
   useEffect(() => {
