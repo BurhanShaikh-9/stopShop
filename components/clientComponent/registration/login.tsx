@@ -122,7 +122,7 @@ export const LoginComponent = () => {
                                     </div>
                                 </form>
                                 <p>Forgot password? <a href="#">Click Here</a></p>
-                                <p>Don't have an account <Link href="/signup">Sign up</Link></p>
+                                <p>Donot have an account <Link href="/signup">Sign up</Link></p>
                             </div>
                         </div>
 
