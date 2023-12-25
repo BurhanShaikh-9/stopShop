@@ -1,38 +1,33 @@
 
 "use client"
 import AuthService from '../../../services/apiRoutes/authService'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PiEyeClosedDuotone, PiEyeDuotone } from 'react-icons/pi'
 import logo from '../../assets/logo6.png'
 import TokenService from '../../../services/tokenService'
 import Link from 'next/link'
 import { emailRegex } from '@/services/regex'
+import { useForm } from 'react-hook-form'
+
 
 export const SignupComponent = () => {
     const { SignupApi } = AuthService();
     const { setTokenCookies } = TokenService();
     const [isEmailValid, setIsEmailValid] = useState(true);
 
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
-        username: ''
-    })
 
-    const onChangeInput = (e: any) => {
-        const fieldValue = e.target.value;
-        const fieldName = e.target.name;
+    type FormValues = {
+        email: string,
+        password: string,
+        username: string
+    }
 
+    const formHook = useForm<FormValues>({mode:'onChange'});
+    const { register, control, reset, handleSubmit, formState } = formHook
+    const { errors, isValid, isDirty, isSubmitSuccessful } = formState;
 
-        if (fieldName === 'email') {
-            const isValid = emailRegex.test(fieldValue);
-            setIsEmailValid(isValid);
-        }
+    const onFormSubmit = (loginData: FormValues) => {
 
-        setLoginData({ ...loginData, [fieldName]: fieldValue });
-    };
-    const onFormSubmit = (e: any) => {
-        e.preventDefault();
         console.log(loginData, 'dataa');
         SignupApi(loginData)
             .then((res) => res.json())
@@ -48,7 +43,11 @@ export const SignupComponent = () => {
 
     const [isPassword, setIsPassword] = useState(true);
 
-
+    useEffect(() => {
+        if (isSubmitSuccessful) {
+            reset()
+        }
+    }, [isSubmitSuccessful, reset])
 
 
     return (
@@ -72,35 +71,42 @@ export const SignupComponent = () => {
                         <div className="container">
                             <div className="form">
                                 <h2>ETHHEERAL ESSENCE</h2>
-                                <form onSubmit={onFormSubmit}>
-                                    <div className="inputBx">
-                                        <input type="text" name='username' required onChange={onChangeInput} />
-                                        <span>Name</span>
-                                        {/* <i className="fas fa-user-circle"></i> */}
+                                <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
+                                    <div className='formFieldRelative'>
+                                        <div className="inputBx">
+                                            <input type="text"  {...register('username', {
+                                                required: { value: true, message: 'Username is Required' },
+                                            })} />
+                                            <span>Name</span>
+                                        </div>
+                                        <div className="inputBx">
+                                            <input type="text" {...register('email', {
+                                                required: { value: true, message: 'Email is Required' },
+                                                pattern: { value: emailRegex, message: 'Invalid Email' },
+                                            })} />
+                                            <span>Email</span>
+                                        </div>
+                                        <div className="inputBx password">
+                                            <input id="password-input" type={isPassword ? 'password' : 'text'} {...register('password', {
+                                                required: { value: true, message: 'Password is Required' },
+                                            })} />
+                                            <span>Password</span>
+                                            <button className="password-control" onClick={(e) => { setIsPassword(!isPassword); e.preventDefault() }} >
+                                                {
+                                                    isPassword ?
+                                                        <PiEyeClosedDuotone />
+                                                        :
+                                                        <PiEyeDuotone />
+                                                }
+                                            </button>
+                                        </div>
+                                        {
+                                            (errors.email || errors.username || errors.password) &&
+                                            <p className='invalidInput formFieldAbsolute'>{errors?.email?.message || errors?.username?.message || errors?.password?.message}</p>
+                                        }
                                     </div>
                                     <div className="inputBx">
-                                        <input type="text" name='email' required onChange={onChangeInput} />
-                                        <span>Email</span>
-                                        {/* <i className="fas fa-user-circle"></i> */}
-                                    </div>
-                                    <div className="inputBx password">
-                                        <input id="password-input" type={isPassword ? 'password' : 'text'} name="password" required onChange={onChangeInput} />
-                                        <span>Password</span>
-                                        <button className="password-control" onClick={(e) => { setIsPassword(!isPassword); e.preventDefault() }} >
-                                            {
-                                                isPassword ?
-                                                    <PiEyeClosedDuotone />
-                                                    :
-                                                    <PiEyeDuotone />
-                                            }
-                                        </button>
-                                    </div>
-                                    {
-                                        !isEmailValid &&
-                                        <p className='invalidInput'>*Invalid Email</p>
-                                    }
-                                    <div className="inputBx">
-                                        <button className={`signInButton ${!isEmailValid && 'buttonDisabled'}`} disabled={!isEmailValid}>Login</button>
+                                        <button className="signInButton" disabled={!isValid || !isDirty}>Signup</button>
                                     </div>
                                 </form>
                                 <p>have an account <Link href="/login">Login</Link></p>

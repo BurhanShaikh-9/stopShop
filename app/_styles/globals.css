@@ -578,6 +578,13 @@ header .headerInner .searchInput:focus + .searchBtn {
   height: 38px;
 }
 
+.formFieldRelative {
+  position: relative;
+}
+.formFieldRelative .formFieldAbsolute {
+  position: absolute;
+}
+
 .LoginMain .fas {
   width: 32px;
 }
@@ -759,6 +766,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   letter-spacing: 1px;
   cursor: pointer;
   transition: 1.5s;
+  margin-top: 10px;
 }
 .LoginMain .form .inputBx .signInButton:hover {
   background: linear-gradient(115deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.25));
@@ -793,6 +801,7 @@ header .headerInner .searchInput:focus + .searchBtn {
   font-size: 12px;
 }
 .LoginMain .form p {
+  bottom: -23px;
   color: #fff;
   font-size: 15px;
   margin-top: 5px;

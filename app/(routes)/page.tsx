@@ -10,11 +10,13 @@ import Loader from './loading'
 import LoaderComponent from '@/components/reusableComponent/loader/loader'
 
 
+
 export default function Home() {
 
   return (
     <React.Fragment>
       <Suspense fallback={<Loader />}>
+       
         <LoginPage />
         {/* <LoaderComponent/> */}
 

@@ -6,6 +6,9 @@ import { Roboto } from 'next/font/google'
 import { cookies } from 'next/headers';
 import { ClientCookiesProvider } from '../../components/cookiesComponent/cookiesClient';
 // import {isAuthenticated} from '../../services/authentication'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const roboto = Roboto({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
@@ -28,12 +31,24 @@ export default function RootLayout({
 }) {
 
   // console.log(isAuthenticated(), 'authhh');
-  
+
   return (
     <html lang="en">
       <body className={`${roboto.className} bodyClass`}>
         <ClientCookiesProvider value={cookies().getAll()}>
           <Header />
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           {children}
           <Footer />
         </ClientCookiesProvider>
