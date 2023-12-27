@@ -23,6 +23,7 @@ export const LoginComponent = () => {
     }
 
     const formHook = useForm<FormValues>({ mode: 'onChange' });
+    
     const { register, control, reset, handleSubmit, trigger, formState } = formHook
     const { errors, isValid, isDirty, isSubmitSuccessful } = formState;
 
