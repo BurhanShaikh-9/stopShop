@@ -183,7 +183,7 @@
 
 }
 
-header {
+.cus-header {
     position: fixed;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.25);
@@ -435,7 +435,10 @@ body {
 }
 
 
-.bodyClass {
+// .bodyClass {
+//     background-image: url(../../assets/Sprinkle.svg);
+// }
+.mainCustomer {
     background-image: url(../../assets/Sprinkle.svg);
 }
 
@@ -1045,6 +1048,198 @@ body {
 
 
 
+.adminPanel {
+    display: flex;
+    background-color: rgb(0, 149, 207);
+
+    .rightBody {
+        flex: 1;
+        margin-left: 250px;
+        border-radius: 30px 0 0 0;
+
+        .ad-adminHeader {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 30px;
+
+            .ad-dashboardLeft {
+                display: flex;
+                column-gap: 30px;
+                align-items: center;
+
+                .ad-burgerMenu {
+                    align-items: center;
+                    border: none;
+                    height: 30px;
+                    width: 30px;
+                    cursor: pointer;
+                    background-color: transparent;
+
+                    svg {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+
+                .ad-pageName {
+                    display: flex;
+                }
+            }
+
+            .ad-dashboardRight {
+                display: flex;
+                align-items: center;
+                column-gap: 30px;
+
+                .ad-profileIcon {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: contain;
+                        border-radius: 50%;
+                    }
+                }
+
+                .ad-notification {
+                    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .ad-searchBar {
+                    position: relative;
+                    border: 1px solid grey;
+                    border-radius: 50px;
+
+                    // width: clamp(200px, 30vw, 400px);
+                    svg {
+                        position: absolute;
+                        right: 20px;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    input {
+                        height: 40px;
+                        border-radius: 50px;
+                        width: clamp(200px, 30vw, 400px);
+                        color: transparent;
+                        border: none;
+                        padding: 0 15px;
+
+                        &:focus-visible {
+                            outline: none;
+                        }
+                    }
+                }
+
+                .ad-profileName {}
+            }
+
+
+        }
+
+        background-color: rgb(247, 247, 247);
+    }
+
+    .ad-sideBar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+        // overflow-x: hidden;
+        flex: 0 0 250px;
+        background-color: rgb(0, 149, 207);
+
+        .brandLogo {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 200px;
+                height: 100px;
+                object-fit: contain;
+            }
+        }
+
+        .ad-sideBarList {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            margin-left: 25px;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 20px;
+            width: calc(100% - 45px);
+            list-style: none;
+            .ad-sideBarListInner {
+                display: flex;
+                align-items: center;
+                height: 55px;
+                padding-left: 20px;
+               
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 18px;
+                    color: white;
+                    text-decoration: none;
+                    width: 100%;
+                }
+            }
+        }
+
+        .ad-active {
+            background-color: white;
+
+            a {
+                color: rgb(0, 149, 207) !important;
+                text-decoration: none;
+            }
+
+            width: 100%;
+            border-radius: 40px 0 0 40px;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: 40px;
+                height: 40px;
+                right: 0;
+                top: -40px;
+                background-color: rgb(0, 149, 207);
+                border-radius: 0 0 18px 0;
+                box-shadow: 10px 10px 0 0 white;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 40px;
+                height: 40px;
+                right: 0;
+                top: 55px;
+                background-color: rgb(0, 149, 207);
+                border-radius: 0 18px 0 0;
+                box-shadow: 10px -5px 0 0 white;
+            }
+        }
+    }
+}
+
+
+
 
 @media (max-width: 575px) {
     .container {
@@ -1109,7 +1304,8 @@ body {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1140px;
+        // max-width: 1140px;
+        max-width: 1120px;
     }
 
     .searchBox {

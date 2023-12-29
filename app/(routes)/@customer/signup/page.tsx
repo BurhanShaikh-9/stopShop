@@ -1,13 +1,13 @@
 
 import React from 'react'
-import {LoginComponent} from '../../../components/clientComponent/registration/login'
+import { SignupComponent } from '@/components/clientComponent/registration/signup'
 
 
 const LoginPage = () => {
 
     return (
         <React.Fragment>
-            <LoginComponent />
+            <SignupComponent />
         </React.Fragment>
     )
 }

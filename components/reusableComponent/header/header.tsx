@@ -8,6 +8,9 @@ import cartIcon from '../../../assets/cartIcon.gif'
 import userIcon from '../../../assets/userIcon.gif'
 import Image from 'next/image'
 import logo from '../../../assets/logo6.png'
+import { IoIosNotificationsOutline } from "react-icons/io";
+import profilePic from '@/assets/profilePic.jpg'
+
 export const Header = () => {
 
     const [isMobileNav, setIsMobileNav] = useState(false);
@@ -15,31 +18,26 @@ export const Header = () => {
     useEffect(() => {
         // Function to handle window resize
         const handleResize = () => {
-            // Check the window width and update the state accordingly
             if (window.innerWidth < 1200) {
                 setIsMobileNav(true);
             } else {
                 setIsMobileNav(false);
             }
         };
-
-        // Add a resize event listener
         window.addEventListener('resize', handleResize);
-
-        // Call the handleResize function once to set the initial state
         handleResize();
-
-        // Remove the event listener when the component unmounts
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
     return (
-        <header>
+        <React.Fragment>
+
+            {/* <header className='cus-header'>
             <div className="container">
                 <div className="headerInner">
                     <Link href="/shop" className="logo">
-                        <Image src={logo} alt="logo"/>
+                        <Image src={logo} alt="logo" />
                     </Link>
                     <div className="searchBox">
                         <input type="text" placeholder="Search anything" className="searchInput" />
@@ -98,11 +96,44 @@ export const Header = () => {
                         )
 
                     }
-
-
                 </div>
             </div>
-        </header>
+        </header> */}
+            <header>
+                {/* <div className="container"> */}
+                    <div className="ad-adminHeader">
+                        <div className="ad-dashboardLeft">
+                            <button className='ad-burgerMenu'>
+                                <RxHamburgerMenu />
+                            </button>
+                            <div className="ad-pageName">
+                                Dashboard
+                            </div>
+                        </div>
+                        <div className="ad-dashboardRight">
+                            <div className="ad-searchBar">
+                                <input type="text" placeholder='Search...' />
+                                <BsSearch  />
+                            </div>
+                            <div className="ad-notification">
+                                <IoIosNotificationsOutline />
+                            </div>
+                            <div className="ad-profileIcon">
+                                <Image src={profilePic} alt="profilePic" />
+                            </div>
+                            <div className="ad-profileName">
+                                <p>Burhan Shaikh</p>
+                                <p>Admin</p>
+                            </div>
+                        </div>
+                    </div>
+                {/* </div> */}
+            </header>
+        </React.Fragment>
+
+
+
+
 
     )
 }
