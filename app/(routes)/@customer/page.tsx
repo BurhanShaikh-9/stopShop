@@ -10,12 +10,12 @@ import { MainPage } from '@/components/clientComponent/mainPage/mainPage'
 const CustomerShop = () => {
   return (
     <React.Fragment>
-    <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
 
-      <MainPage />
+        <MainPage />
 
-    </Suspense>
-  </React.Fragment>
+      </Suspense>
+    </React.Fragment>
   )
 }
 

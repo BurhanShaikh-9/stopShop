@@ -15,8 +15,6 @@ const ItemDescription = () => {
         <React.Fragment>
             <div className={`${pacifico.className} `}>
                 <CartItemDescription />
-
-                
             </div>
         </React.Fragment>
     )

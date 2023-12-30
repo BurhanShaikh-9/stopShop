@@ -14,16 +14,16 @@ export default function CustomerLayout({
 
     
     return (
-        // <React.Fragment>
-        //     <div className="adminPanel">
-        //         <SideBar />
-        //         <div className="rightBody">
-        //             <Header />
-        //             {children}
-        //             <Footer />
-        //         </div>
-        //     </div>
-        // </React.Fragment>
-        <AdminLayout children={children} />
+        <React.Fragment>
+            <div className="adminPanel">
+                <SideBar />
+                <div className="rightBody">
+                    <Header />
+                    {children}
+                    <Footer />
+                </div>
+            </div>
+        </React.Fragment>
+        // <AdminLayout children={children} />
     )
 }

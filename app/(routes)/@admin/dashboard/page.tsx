@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <React.Fragment>
     {/* <Sidebar/> */}
-    <DashboardComp />
+      <DashboardComp />
     </React.Fragment>
   )
 }
