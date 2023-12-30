@@ -826,9 +826,11 @@
 .adminPanel {
   display: flex;
   background-color: rgb(0, 149, 207);
+  transition: all 0.3s ease;
 }
 .adminPanel .rightBody {
   flex: 1;
+  transition: margin-left 0.3s ease;
   margin-left: 250px;
   border-radius: 30px 0 0 0;
   background-color: rgb(247, 247, 247);
@@ -900,7 +902,7 @@
 .adminPanel .rightBody .ad-adminHeader .ad-dashboardRight .ad-searchBar input {
   height: 40px;
   border-radius: 50px;
-  width: clamp(200px, 30vw, 400px);
+  width: clamp(200px, 20vw, 400px);
   color: transparent;
   border: none;
   padding: 0 15px;
@@ -908,11 +910,19 @@
 .adminPanel .rightBody .ad-adminHeader .ad-dashboardRight .ad-searchBar input:focus-visible {
   outline: none;
 }
+.adminPanel .bodyFull {
+  border-radius: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
 .adminPanel .ad-sideBar {
+  transition: transform 0.3s ease;
   width: 250px;
   height: 100vh;
+  transform: translate(-100%);
   position: fixed;
   overflow-y: auto;
+  overflow-x: hidden;
   flex: 0 0 250px;
   background-color: rgb(0, 149, 207);
 }
@@ -934,32 +944,65 @@
   flex-direction: column;
   gap: 20px;
   font-size: 20px;
-  width: calc(100% - 45px);
+  width: calc(100% - 25px);
   list-style: none;
 }
 .adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner {
   display: flex;
   align-items: center;
-  height: 55px;
-  padding-left: 20px;
+  flex-direction: column;
 }
 .adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a {
+  padding-left: 20px;
+  height: 55px;
   display: flex;
   align-items: center;
   gap: 18px;
   color: white;
   text-decoration: none;
   width: 100%;
+  position: relative;
+}
+.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a::after {
+  position: absolute;
+  content: "";
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  transform-origin: top;
+  transition: all 0.3s ease-out;
+  width: 0.5rem;
+  height: 0.5rem;
+  right: 2.5rem;
+  top: 28px;
+  webkit-transform: rotate(-225deg) translateY(-50%);
+  transform: rotate(-225deg) translateY(-50%);
+}
+.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a svg {
+  height: 23px;
+  width: 23px;
+}
+.adminPanel .ad-sideBar .ad-sideBarList .ad-innerMenu {
+  list-style: none;
+  color: white;
+  font-size: 16px;
+  max-height: 0;
+  /* Initial height */
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 .adminPanel .ad-sideBar .ad-active {
-  background-color: white;
   width: 100%;
-  border-radius: 40px 0 0 40px;
   position: relative;
 }
 .adminPanel .ad-sideBar .ad-active a {
+  background-color: white;
   color: rgb(0, 149, 207) !important;
   text-decoration: none;
+  border-radius: 40px 0 0 40px;
+}
+.adminPanel .ad-sideBar .ad-active a::after {
+  webkit-transform: rotate(-135deg) translateY(-50%) !important;
+  transform: rotate(-135deg) translateY(-50%) !important;
 }
 .adminPanel .ad-sideBar .ad-active::after {
   position: absolute;
@@ -982,6 +1025,18 @@
   background-color: rgb(0, 149, 207);
   border-radius: 0 18px 0 0;
   box-shadow: 10px -5px 0 0 white;
+}
+.adminPanel .ad-sideBar .ad-active .ad-innerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin-top: 15px;
+  max-height: 200px;
+}
+.adminPanel .sidebarActive {
+  transform: translate(0);
+  transition: all 0.3 ease;
 }
 
 @media (max-width: 575px) {

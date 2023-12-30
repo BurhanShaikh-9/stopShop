@@ -11,22 +11,34 @@ import { GrDeliver } from "react-icons/gr";
 import { CiDeliveryTruck } from "react-icons/ci";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
+import useSidebarActive from '@/zustand/zustandStore';
+import { FiTruck } from "react-icons/fi";
+import { PiPackageDuotone } from "react-icons/pi";
 
 const SideBar = () => {
 
- const pathname = usePathname()
+
+  const { sideBarValue, toggleSidebar } = useSidebarActive();
+
+  const pathname = usePathname()
 
   return (
-    <div className='ad-sideBar'>
+    <div className={`ad-sideBar ${sideBarValue ? 'sidebarActive' : ''}`}>
       <div className="brandLogo">
         <Image src={logo} alt="logo" />
       </div>
       <ul className='ad-sideBarList'>
-        <li className={`ad-sideBarListInner ${pathname === '/dashboard' && 'ad-active' }`}><Link href='/dashboard'><MdOutlineDashboard /> <span>Dashboard</span> </Link></li>
-        <li className={`ad-sideBarListInner ${pathname === '/admin' && 'ad-active' }`}><Link href='/admin'> <RiAdminLine /> <span>Admin</span></Link>  </li>
-        <li className={`ad-sideBarListInner ${pathname === '/product' && 'ad-active' }`}><Link href='/product'> <FaBox /> <span>Products</span></Link> </li>
-        <li className={`ad-sideBarListInner ${pathname === '/user' && 'ad-active' }`}><Link href='/user'> <FaRegUser /> <span>Users</span></Link> </li>
-        <li className={`ad-sideBarListInner ${pathname === '/order' && 'ad-active' }`}><Link href='/order'> <CiDeliveryTruck /> <span>Orders</span></Link> </li>
+        <li className={`ad-sideBarListInner ${pathname === '/dashboard' && 'ad-active'}`}><Link href='/dashboard'><MdOutlineDashboard /> <span>Dashboard</span> </Link></li>
+        <li className={`ad-sideBarListInner ${pathname === '/admin' && 'ad-active'}`}>
+          <Link href='/admin'> <RiAdminLine /> <span>Admin</span></Link>
+          <ul className='ad-innerMenu'>
+            <li className='ad-innerMenuWrapper'>Add Admin</li>
+            <li className='ad-innerMenuWrapper'>Manage Admin</li>
+          </ul>
+        </li>
+        <li className={`ad-sideBarListInner ${pathname === '/product' && 'ad-active'}`}><Link href='/product'> <PiPackageDuotone /> <span>Products</span></Link> </li>
+        <li className={`ad-sideBarListInner ${pathname === '/user' && 'ad-active'}`}><Link href='/user'> <FaRegUser /> <span>Users</span></Link> </li>
+        <li className={`ad-sideBarListInner ${pathname === '/order' && 'ad-active'}`}><Link href='/order'> <FiTruck /> <span>Orders</span></Link> </li>
       </ul>
     </div>
   )

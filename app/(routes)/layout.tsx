@@ -53,6 +53,7 @@ export default function RootLayout({
             theme="light"
           />
           {admin}
+          {/* {children} */}
           {/* {customer} */}
         </ClientCookiesProvider>
       </body>

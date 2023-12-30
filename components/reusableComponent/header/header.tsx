@@ -10,11 +10,18 @@ import Image from 'next/image'
 import logo from '../../../assets/logo6.png'
 import { IoIosNotificationsOutline } from "react-icons/io";
 import profilePic from '@/assets/profilePic.jpg'
+import useSidebarActive from '@/zustand/zustandStore'
 
 export const Header = () => {
 
     const [isMobileNav, setIsMobileNav] = useState(false);
     const [isShowNav, setIsShowNav] = useState(false)
+    const [isSideBar, setIsSidebar] = useState(false)
+    const { sideBarValue, toggleSidebar } = useSidebarActive();
+
+    // useEffect(()=>{
+    //     console.log(sideBarValue, 'sideee');
+    // },[sideBarValue])
     useEffect(() => {
         // Function to handle window resize
         const handleResize = () => {
@@ -103,7 +110,7 @@ export const Header = () => {
                 {/* <div className="container"> */}
                     <div className="ad-adminHeader">
                         <div className="ad-dashboardLeft">
-                            <button className='ad-burgerMenu'>
+                            <button className='ad-burgerMenu' onClick={()=>toggleSidebar()}>
                                 <RxHamburgerMenu />
                             </button>
                             <div className="ad-pageName">
