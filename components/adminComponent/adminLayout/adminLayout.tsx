@@ -14,18 +14,19 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
     const { sideBarValue, toggleSidebar } = useSidebarActive();
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 991 && sideBarValue) {
-                toggleSidebar();
-            }
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [sideBarValue, toggleSidebar]);
+    console.log(sideBarValue, 'ssss');
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         if (window.innerWidth <= 991 && sideBarValue) {
+    //             toggleSidebar();
+    //         }
+    //     };
+    //     handleResize();
+    //     window.addEventListener('resize', handleResize);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     };
+    // }, [sideBarValue, toggleSidebar]);
 
     return (
         <React.Fragment>

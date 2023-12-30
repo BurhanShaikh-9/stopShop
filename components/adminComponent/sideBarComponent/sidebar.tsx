@@ -25,10 +25,12 @@ const SideBar = () => {
   return (
     <div className={`ad-sideBar ${sideBarValue ? 'sidebarActive' : ''}`}>
       <div className="brandLogo">
-        <Image src={logo} alt="logo" />
+        <Link href='/'>
+          <Image src={logo} alt="logo" />
+        </Link>
       </div>
       <ul className='ad-sideBarList'>
-        <li className={`ad-sideBarListInner ${pathname === '/dashboard' && 'ad-active'}`}><Link href='/dashboard'><MdOutlineDashboard /> <span>Dashboard</span> </Link></li>
+        <li className={`ad-sideBarListInner ${pathname === '/' && 'ad-active'}`}><Link href='/'><MdOutlineDashboard /> <span>Dashboard</span> </Link></li>
         <li className={`ad-sideBarListInner ${pathname === '/admin' && 'ad-active'}`}>
           <Link href='/admin'> <RiAdminLine /> <span>Admin</span></Link>
           <ul className='ad-innerMenu'>
@@ -36,9 +38,22 @@ const SideBar = () => {
             <li className='ad-innerMenuWrapper'>Manage Admin</li>
           </ul>
         </li>
-        <li className={`ad-sideBarListInner ${pathname === '/product' && 'ad-active'}`}><Link href='/product'> <PiPackageDuotone /> <span>Products</span></Link> </li>
-        <li className={`ad-sideBarListInner ${pathname === '/user' && 'ad-active'}`}><Link href='/user'> <FaRegUser /> <span>Users</span></Link> </li>
-        <li className={`ad-sideBarListInner ${pathname === '/order' && 'ad-active'}`}><Link href='/order'> <FiTruck /> <span>Orders</span></Link> </li>
+        <li className={`ad-sideBarListInner ${pathname === '/product' && 'ad-active'}`}>
+          <Link href='/product'> <PiPackageDuotone /> <span>Products</span></Link>
+          <ul className='ad-innerMenu'>
+            <li className='ad-innerMenuWrapper'>Add Products</li>
+            <li className='ad-innerMenuWrapper'>Manage Products</li>
+          </ul>
+        </li>
+        <li className={`ad-sideBarListInner ${pathname === '/user' && 'ad-active'}`}>
+          <Link href='/user'> <FaRegUser /> <span>Users</span></Link>
+        </li>
+        <li className={`ad-sideBarListInner ${pathname === '/order' && 'ad-active'}`}>
+          <Link href='/order'> <FiTruck /> <span>Orders</span></Link>
+        </li>
+        <li className={`ad-sideBarListInner ${pathname === '/profile' && 'ad-active'}`}>
+          <Link href='/profile'> <FiTruck /> <span>Profile</span></Link>
+        </li>
       </ul>
     </div>
   )
