@@ -1146,7 +1146,7 @@ body {
                     }
                 }
 
-                .ad-profileName {}
+
             }
 
 
@@ -1227,7 +1227,8 @@ body {
                         webkit-transform: rotate(-225deg) translateY(-50%);
                         transform: rotate(-225deg) translateY(-50%);
                     }
-                    svg{
+
+                    svg {
                         height: 23px;
                         width: 23px;
                     }
@@ -1317,7 +1318,7 @@ body {
 
     .sidebarActive {
         transform: translate(0);
-    transition: all .3 ease;
+        transition: all .3 ease;
 
     }
 }
@@ -1354,52 +1355,80 @@ body {
     }
 }
 
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
-    }
+@media (max-width: 991px) {
 
-    .character {
-        font-size: 100px;
-
-    }
-
-    .searchBox {
+    .ad-profileName,
+    .ad-searchBar {
         display: none;
     }
+
+    // .ad-searchBar{
+    //     display: none;
+    // }
+
+    // .bodyFull {
+    //     margin-left: 250px;
+    // }
+
+    // .adminPanel .rightBody {
+    //     margin-left: 0;
+    // }
+
+    // .adminPanel .ad-sideBar {
+    //     transform: translate(0);
+    // }
+    // .adminPanel  .sidebarActive {
+    //     transform: translate(-100%);
+       
+
+    // }
 }
+    @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
 
+        .character {
+            font-size: 100px;
 
-@media (min-width: 768px) {
+        }
 
-    .container {
-        max-width: 720px;
-    }
-}
-
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-
-}
-
-
-@media (min-width: 1200px) {
-    .container {
-        // max-width: 1140px;
-        max-width: 1120px;
+        .searchBox {
+            display: none;
+        }
     }
 
-    .searchBox {
-        display: block;
+
+    @media (min-width: 768px) {
+
+        .container {
+            max-width: 720px;
+        }
     }
-}
 
 
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+
     }
-}
+
+
+    @media (min-width: 1200px) {
+        .container {
+            // max-width: 1140px;
+            max-width: 1120px;
+        }
+
+        .searchBox {
+            display: block;
+        }
+    }
+
+
+    @media (min-width: 1400px) {
+        .container {
+            max-width: 1320px;
+        }
+    }

@@ -1060,6 +1060,12 @@
     font-size: 37px;
   }
 }
+@media (max-width: 991px) {
+  .ad-profileName,
+  .ad-searchBar {
+    display: none;
+  }
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
