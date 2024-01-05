@@ -54,6 +54,7 @@ export default function RootLayout({
           />
           {/* {admin} */}
           {/* {children} */}
+        {/* '' */}
           {customer}
         </ClientCookiesProvider>
       </body>
