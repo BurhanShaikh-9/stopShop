@@ -12,7 +12,7 @@ export default function CustomerLayout({
 }) {
 
 
-    
+
     return (
         // <React.Fragment>
         //     <div className="adminPanel">
@@ -24,6 +24,8 @@ export default function CustomerLayout({
         //         </div>
         //     </div>
         // </React.Fragment>
-        <AdminLayout children={children} />
+        <AdminLayout >
+            {children}
+        </AdminLayout>
     )
 }
