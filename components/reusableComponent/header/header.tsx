@@ -40,7 +40,7 @@ export const Header = () => {
     return (
         <React.Fragment>
 
-            <header className='cus-header'>
+            {/* <header className='cus-header'>
             <div className="container">
                 <div className="headerInner">
                     <Link href="/shop" className="logo">
@@ -105,8 +105,8 @@ export const Header = () => {
                     }
                 </div>
             </div>
-        </header>
-            {/* <header>
+        </header> */}
+            <header>
                     <div className="ad-adminHeader">
                         <div className="ad-dashboardLeft">
                             <button className='ad-burgerMenu' onClick={()=>toggleSidebar()}>
@@ -134,7 +134,7 @@ export const Header = () => {
                         </div>
                     </div>
       
-            </header> */}
+            </header>
         </React.Fragment>
 
 

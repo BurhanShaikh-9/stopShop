@@ -11,7 +11,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image'
 import parallexImg1 from '../../../assets/parallexImg1.png'
-// import carouselImg2 from '../../assets/carousel2.jpg'
+// import { url } from 'inspector';
+import carouselImg1 from '../../../assets/carousel1.jpg'
 // import carouselImg3 from '../../assets/carousel3.jpg'
 // import carouselImg4 from '../../assets/carousel4.jpg'
 
@@ -21,9 +22,14 @@ export const HeroSection = () => {
         <React.Fragment>
             <div>
                 <div className="heroSection">
-                    <div className="parralexSection">
-                        
-                        <Image src={parallexImg1} alt='paralexImage' />
+                    <Image className='heroSectionImg'
+                        alt="carouselImage"
+                        src={carouselImg1}
+                    />
+                    <div className="parralexSection  parallaxElement">
+
+                        <Image className='img1' src={parallexImg1} alt='paralexImage' />
+                        {/* <Image className='img2' src={parallexImg1} alt='paralexImage' /> */}
                     </div>
                 </div>
                 {/* <div className="carousel-container">

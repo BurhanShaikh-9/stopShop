@@ -52,10 +52,10 @@ export default function RootLayout({
             pauseOnHover
             theme="light"
           />
-          {/* {admin} */}
+          {admin}
           {/* {children} */}
         {/* '' */}
-          {customer}
+          {/* {customer} */}
         </ClientCookiesProvider>
       </body>
     </html>

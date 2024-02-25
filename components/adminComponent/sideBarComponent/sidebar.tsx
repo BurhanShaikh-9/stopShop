@@ -39,9 +39,9 @@ const SideBar = () => {
           </ul>
         </li>
         <li className={`ad-sideBarListInner ${pathname === '/product' && 'ad-active'}`}>
-          <Link href='/product'> <PiPackageDuotone /> <span>Products</span></Link>
+          <Link href='/add-product'> <PiPackageDuotone /> <span>Products</span></Link>
           <ul className='ad-innerMenu'>
-            <li className='ad-innerMenuWrapper'>Add Products</li>
+            <li className='ad-innerMenuWrapper'><Link href='/add-product'> Add Products </Link></li>
             <li className='ad-innerMenuWrapper'>Manage Products</li>
           </ul>
         </li>

@@ -25,7 +25,9 @@ export default function CustomerLayout({
         //     </div>
         // </React.Fragment>
         <AdminLayout >
-            {children}
+            <div className="dashboardLayoutInner">
+                {children}
+            </div>
         </AdminLayout>
     )
 }

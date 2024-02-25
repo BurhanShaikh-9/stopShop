@@ -1,28 +1,25 @@
-// import { baseUrl } from "../constants"
-// import { jsonContentType } from "../requestOptions"
+import { baseUrl } from "../constants"
+import { jsonContentType } from "../requestOptions"
 
-// interface LoginData {
-//     email: string;
-//     password: string;
-// }
-// interface SignUpData {
-//     email: string;
-//     username: string;
-//     password: string;
-// }
+interface productData {
+    image: string;
+    productName: string;
+    productColor: string;
+    productSize: string;
+    productAmount: string;
+    productQuantity: string;
+    productSearchTags: string;
+}
 
-// const AuthService = () => {
+
+const productService = () => {
   
   
-//     const LoginApi = (data: LoginData) => {
-//         return fetch(`${baseUrl}/signIn`, jsonContentType('POST', data))
-//     }
+    const AddProduct = (data: productData) => {
+        return fetch(`${baseUrl}/signIn`, jsonContentType('POST', data))
+    }
 
+    return {AddProduct}
+}
 
-//     const SignupApi = (data: SignUpData) => {
-//         return fetch(`${baseUrl}/user`, jsonContentType('POST', data))
-//     }
-//     return {LoginApi, SignupApi}
-// }
-
-// export default AuthService
+export default productService
