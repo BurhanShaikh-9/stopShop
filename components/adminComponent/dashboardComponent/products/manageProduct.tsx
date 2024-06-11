@@ -25,7 +25,12 @@ const ManageProduct = () => {
 
     useEffect(() => {
         fetchProducts(page, limit, search);
-    }, [page, limit, search]);
+    }, [page, limit]);
+    useEffect(() => {
+        setTimeout(() => {
+            fetchProducts(page, limit, search);
+        }, 500)
+    }, [search]);
 
     const fetchProducts = (page: number, limit: number, search: String) => {
         const data = {
@@ -43,6 +48,7 @@ const ManageProduct = () => {
                 console.error('Error fetching products:', error);
             });
     };
+
     const handleNextPage = () => {
         if (page < totalPages) {
             setPage(page + 1);
