@@ -1,25 +1,25 @@
 import { baseUrl } from "../constants"
-import { jsonContentType } from "../requestOptions"
-
-interface productData {
-    image: string;
-    productName: string;
-    productColor: string;
-    productSize: string;
-    productAmount: string;
-    productQuantity: string;
-    productSearchTags: string;
-}
-
+import { jsonContentType, formContentType } from "../requestOptions"
 
 const productService = () => {
-  
-  
-    const AddProduct = (data: productData) => {
-        return fetch(`${baseUrl}/signIn`, jsonContentType('POST', data))
+
+    interface paginatedData {
+        page: Number,
+        limit: Number,
+        search?: String
     }
 
-    return {AddProduct}
+    const AddProduct = (data: FormData) => {
+        return fetch(`${baseUrl}/product`, formContentType('POST', data))
+    }
+    const GetAllProduct = () => {
+        return fetch(`${baseUrl}/product`, { method: 'GET' })
+    }
+    const GetPaginatedProduct = (data: paginatedData) => {
+        return fetch(`${baseUrl}/paginated-products?page=${data.page}&limit=${data.limit}&search=${data.search}`, { method: 'GET' });
+    };
+
+    return { AddProduct, GetAllProduct, GetPaginatedProduct }
 }
 
 export default productService

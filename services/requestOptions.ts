@@ -7,6 +7,12 @@ export const jsonContentType = (methodType: string, data: object) => {
         body: JSON.stringify(data),
     }
 }
+export const formContentType = (methodType: string, data: FormData) => {
+    return {
+        method: methodType,
+        body: (data),
+    }
+}
 // export const cookieContentType = (methodType: string, data: object) => {
 //     return {
 //         method: methodType,

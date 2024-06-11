@@ -1211,7 +1211,7 @@ body {
                 align-items: center;
                 flex-direction: column;
 
-                a {
+                .ad-outerLink {
                     padding-left: 20px;
                     height: 55px;
                     display: flex;
@@ -1264,9 +1264,15 @@ body {
             }
         }
 
+        .ad-innerActive {
+            a {
+                border-bottom: 2px solid white;
+            }
+        }
+
         .ad-active {
 
-            a {
+            .ad-outerLink {
                 background-color: #F7F7F7;
                 color: rgb(0, 149, 207) !important;
                 text-decoration: none;
@@ -1278,6 +1284,12 @@ body {
                     webkit-transform: rotate(-135deg) translateY(-50%) !important;
                     transform: rotate(-135deg) translateY(-50%) !important;
                 }
+            }
+
+            .ad-innerLink {
+                color: white;
+                text-decoration: none;
+                // border-bottom: 2px solid white;
             }
 
             width: 100%;
@@ -1343,15 +1355,21 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        .inputFieldOut2{
+
+        .inputFieldOut2 {
             width: 100%;
 
             .imageUploader {
+
                 // border-radius: 10px;
                 // height: 40px;
                 // border: 1px solid rgb(187, 187, 187);
                 // width: 100%;
                 // outline: none;
+                svg {
+                    margin-right: 10px;
+                    font-size: 30px;
+                }
 
                 button {
                     // height: 40px;
@@ -1371,6 +1389,10 @@ body {
                     outline: none;
                     padding: 0 20px;
                     cursor: pointer;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
 
@@ -1411,7 +1433,7 @@ body {
                 border: 1px solid rgb(187, 187, 187);
             }
 
-           
+
         }
 
         .FieldSubmitBtn {

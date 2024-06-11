@@ -9,7 +9,7 @@ import { AiOutlineDownload } from "react-icons/ai";
 const AddProduct = () => {
     const { AddProduct } = productService()
     const [images, setImages] = React.useState([]);
-    const maxNumber = 69;
+    const maxNumber = 1;
 
     interface ProductData {
         productName: string;
@@ -18,7 +18,7 @@ const AddProduct = () => {
         productAmount: string;
         productQuantity: string;
         productSearchTags: string;
-        productImage: File | null;
+        image: File[] | null;
     }
     const [productData, setProductData] = useState<ProductData>({
         productName: '',
@@ -27,36 +27,56 @@ const AddProduct = () => {
         productAmount: '',
         productQuantity: '',
         productSearchTags: '',
-        productImage: null,
+        image: null,
     });
 
     const getFormInput = (e: ChangeEvent<HTMLInputElement>) => {
         const name = e.target.name;
         const value = e.target.value;
 
-        if (name === 'productImage') {
-            const file = e.target.files && e.target.files[0];
-            if (file) {
-                setProductData({ ...productData, [name]: file });
-            }
-        } else {
-            setProductData({ ...productData, [name]: value });
-        }
+        // if (name === 'image') {
+        //     const file = e.target.files && e.target.files[0];
+        //     if (file) {
+        //         setProductData({ ...productData, [name]: file });
+        //     }
+        // } else {
+        setProductData({ ...productData, [name]: value });
+        // }
     };
-    const onChange = (
+    const getFormFile = (
         imageList: ImageListType,
-        addUpdateIndex: number[] | undefined
     ) => {
-        // data for submit
-        console.log(imageList, addUpdateIndex);
+        const allFiles = imageList.map((item) => item.file).filter((file): file is File => file !== undefined);
         setImages(imageList as never[]);
+        setProductData({ ...productData, 'image': allFiles });
     };
 
     const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('productData', productData, images.map((item: any) => item?.file));
+        console.log(productData, 'proo')
+        const formData = new FormData();
+        formData.append('productName', productData.productName);
+        formData.append('productColor', productData.productColor);
+        formData.append('productSize', productData.productSize);
+        formData.append('productAmount', productData.productAmount);
+        formData.append('productQuantity', productData.productQuantity);
+        formData.append('productSearchTags', productData.productSearchTags);
+        // Append image to FormData only if it's not null
+        if (productData.image) {
+            formData.append("image", productData.image[0]);
+        }
+        // const formDataObject: { [key: string]: string | File } = {};
+        // formData.forEach((value, key) => {
+        //     formDataObject[key] = value;
+        // });
+        // console.log(formDataObject, 'objj'); 
+        AddProduct(formData)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch(err => {
+                console.log(err);
+            });
     };
-
 
 
     return (
@@ -77,7 +97,7 @@ const AddProduct = () => {
                         </div>
                         {/* <div className="inputFieldOut">
                             <label htmlFor="">Image</label>
-                            <input type="file" name='productImage' onChange={getFormInput}/>
+                            <input type="file" name='image' onChange={getFormInput}/>
                         </div> */}
                         <div className="inputFieldOut">
                             <label htmlFor="">Color</label>
@@ -103,7 +123,7 @@ const AddProduct = () => {
                         <ImageUploading
                             multiple
                             value={images}
-                            onChange={onChange}
+                            onChange={getFormFile}
                             maxNumber={maxNumber}
                         >
                             {({
@@ -122,8 +142,10 @@ const AddProduct = () => {
                                             onClick={onImageUpload}
                                             {...dragProps}
                                         >
-                                            <AiOutlineDownload/>
-                                            Click or Drop your image here
+                                            <AiOutlineDownload />
+                                            <span>
+                                                Click or Drop your image here
+                                            </span>
                                         </button>
                                     </div>
 
@@ -133,8 +155,8 @@ const AddProduct = () => {
                                             <div key={index} className="image-item">
                                                 <img src={image.dataURL} alt="" width="100" />
                                                 <div className="image-item__btn-wrapper">
-                                                    <button onClick={() => onImageUpdate(index)}><FiEdit/></button>
-                                                    <button onClick={() => onImageRemove(index)}><RxCross1/></button>
+                                                    <button onClick={() => onImageUpdate(index)}><FiEdit /></button>
+                                                    <button onClick={() => onImageRemove(index)}><RxCross1 /></button>
                                                 </div>
                                             </div>
                                         ))}

@@ -958,7 +958,7 @@
   align-items: center;
   flex-direction: column;
 }
-.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a {
+.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner .ad-outerLink {
   padding-left: 20px;
   height: 55px;
   display: flex;
@@ -969,7 +969,7 @@
   width: 100%;
   position: relative;
 }
-.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a::after {
+.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner .ad-outerLink::after {
   position: absolute;
   content: "";
   border-width: 1px 0 0 1px;
@@ -983,7 +983,7 @@
   webkit-transform: rotate(-225deg) translateY(-50%);
   transform: rotate(-225deg) translateY(-50%);
 }
-.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner a svg {
+.adminPanel .ad-sideBar .ad-sideBarList .ad-sideBarListInner .ad-outerLink svg {
   height: 23px;
   width: 23px;
 }
@@ -996,19 +996,26 @@
   overflow: hidden;
   transition: all 0.2s ease;
 }
+.adminPanel .ad-sideBar .ad-innerActive a {
+  border-bottom: 2px solid white;
+}
 .adminPanel .ad-sideBar .ad-active {
   width: 100%;
   position: relative;
 }
-.adminPanel .ad-sideBar .ad-active a {
+.adminPanel .ad-sideBar .ad-active .ad-outerLink {
   background-color: #F7F7F7;
   color: rgb(0, 149, 207) !important;
   text-decoration: none;
   border-radius: 40px 0 0 40px;
 }
-.adminPanel .ad-sideBar .ad-active a::after {
+.adminPanel .ad-sideBar .ad-active .ad-outerLink::after {
   webkit-transform: rotate(-135deg) translateY(-50%) !important;
   transform: rotate(-135deg) translateY(-50%) !important;
+}
+.adminPanel .ad-sideBar .ad-active .ad-innerLink {
+  color: white;
+  text-decoration: none;
 }
 .adminPanel .ad-sideBar .ad-active::after {
   position: absolute;
@@ -1056,6 +1063,10 @@
 .adminPanel .adFormInner .inputFieldOut2 {
   width: 100%;
 }
+.adminPanel .adFormInner .inputFieldOut2 .imageUploader svg {
+  margin-right: 10px;
+  font-size: 30px;
+}
 .adminPanel .adFormInner .inputFieldOut2 .imageUploader button {
   border-radius: 10px;
   height: 80px;
@@ -1064,6 +1075,9 @@
   outline: none;
   padding: 0 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .adminPanel .adFormInner .inputFieldOut2 .imagesFormContainer {
   margin-top: 20px;
