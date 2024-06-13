@@ -1,20 +1,27 @@
 "use client"
 import productService from '@/services/apiRoutes/products'
+import ReactPaginate from 'react-paginate';
 import React, { useState, ChangeEvent, useEffect } from 'react'
 import ImageUploading, { ImageListType } from "react-images-uploading";
 import { FiEdit } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
 import { AiOutlineDownload } from "react-icons/ai";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { AiOutlineDelete } from "react-icons/ai";
+import { FaRegEdit } from "react-icons/fa";
+
+
 
 const ManageProduct = () => {
-    const { GetPaginatedProduct } = productService()
+    const { GetPaginatedProduct, DeleteProduct } = productService()
     interface ProductData {
-        productName: string;
-        productColor: string;
-        productSize: string;
-        productAmount: string;
-        productQuantity: string;
-        productSearchTags: string;
+        _id: String;
+        productName: String;
+        productColor: String;
+        productSize: String;
+        productAmount: String;
+        productQuantity: String;
+        productSearchTags: String;
         image: any;
     }
     const [products, setProducts] = useState<ProductData[]>([])
@@ -48,16 +55,23 @@ const ManageProduct = () => {
                 console.error('Error fetching products:', error);
             });
     };
+    const deleteProduct = (id: String) => {
 
-    const handleNextPage = () => {
-        if (page < totalPages) {
-            setPage(page + 1);
-        }
+        console.log(id, 'iddd')
+        DeleteProduct(id)
+            .then((res) => res.json())
+            .then((data) => {
+                fetchProducts(page, limit, search);
+            })
+            .catch((error) => {
+                console.error('Error fetching products:', error);
+            });
     };
 
-    const handlePreviousPage = () => {
-        if (page > 1) {
-            setPage(page - 1);
+    const handlePageClick = (selectedItem: { selected: number }) => {
+        let incPage = selectedItem.selected + 1
+        if (page >= 1) {
+            setPage(incPage);
         }
     };
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -88,27 +102,65 @@ const ManageProduct = () => {
                     </thead>
                     <tbody>
                         {
-                            products.map((item, keyId) => (
-                                <tr key={keyId}>
-                                    <td>{keyId + 1}</td>
-                                    <td>{item.productName}</td>
-                                    <td>{item.productColor}</td>
-                                    <td>{item.productAmount}</td>
-                                    <td>{item.productQuantity}</td>
-                                    <td>{item.productSize}</td>
-                                    <td>delete/edit</td>
-                                </tr>
-                            ))
+                            products?.map((item, keyId) => {
+
+                                return (
+
+                                    <tr key={keyId}>
+
+                                        <td>{keyId + 1}</td>
+                                        <td>{item.productName}</td>
+                                        <td>{item.productColor}</td>
+                                        <td>{item.productAmount}</td>
+                                        <td>{item.productQuantity}</td>
+                                        <td>{item.productSize}</td>
+                                        <td>
+                                            <button onClick={() => deleteProduct(item._id)}>
+                                                <AiOutlineDelete />
+                                            </button>
+                                            <button>
+                                                <FaRegEdit />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
                         }
 
                     </tbody>
 
                 </table>
-                <div className="pagination">
-                    <button onClick={handlePreviousPage} disabled={page <= 1}>Previous</button>
-                    <span>Page {page} of {totalPages}</span>
-                    <button onClick={handleNextPage} disabled={page >= totalPages}>Next</button>
-                </div>
+
+                {/* <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    breakLabel={"..."}
+                    pageCount={totalPages}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageClick}
+                    containerClassName={"ad-pagination"}
+                    activeClassName={"active"}
+                    breakClassName={"break-me"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link"}
+                    previousClassName={"page-item"}
+                    previousLinkClassName={"page-link"}
+                    nextClassName={"page-item"}
+                    nextLinkClassName={"page-link"}
+                /> */}
+                <ReactPaginate
+                    previousLabel={<IoIosArrowBack />}
+                    nextLabel={<IoIosArrowForward />}
+                    pageRangeDisplayed={2}
+                    pageCount={totalPages}
+                    breakLabel="..."
+                    breakClassName={"break-me"}
+                    onPageChange={handlePageClick}
+                    containerClassName={'ad-pagination'}
+                    activeClassName={'active'}
+                />
+
             </div>
         </React.Fragment>
     )
