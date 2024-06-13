@@ -57,7 +57,6 @@ const ManageProduct = () => {
     };
     const deleteProduct = (id: String) => {
 
-        console.log(id, 'iddd')
         DeleteProduct(id)
             .then((res) => res.json())
             .then((data) => {
