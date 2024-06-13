@@ -11,6 +11,7 @@ import logo from '../../../assets/logo6.png'
 import { IoIosNotificationsOutline } from "react-icons/io";
 import profilePic from '@/assets/profilePic.jpg'
 import useSidebarActive from '@/zustand/zustandStore'
+import PusherComponent from '@/components/reusableComponent/pusher/pusher'
 
 export const Header = () => {
 
@@ -37,6 +38,11 @@ export const Header = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const handleReceivedMessage = (message: string) => {
+        console.log('Received message in MyComponent:', message);
+        // Process the received message as needed
+    };
     return (
         <React.Fragment>
 
@@ -107,33 +113,34 @@ export const Header = () => {
             </div>
         </header> */}
             <header>
-                    <div className="ad-adminHeader">
-                        <div className="ad-dashboardLeft">
-                            <button className='ad-burgerMenu' onClick={()=>toggleSidebar()}>
-                                <RxHamburgerMenu />
-                            </button>
-                            <div className="ad-pageName">
-                                Dashboard
-                            </div>
-                        </div>
-                        <div className="ad-dashboardRight">
-                            <div className="ad-searchBar">
-                                <input type="text" placeholder='Search...' />
-                                <BsSearch  />
-                            </div>
-                            <div className="ad-notification">
-                                <IoIosNotificationsOutline />
-                            </div>
-                            <div className="ad-profileIcon">
-                                <Image src={profilePic} alt="profilePic" />
-                            </div>
-                            <div className="ad-profileName">
-                                <p>Burhan Shaikh</p>
-                                <p>Admin</p>
-                            </div>
+                <div className="ad-adminHeader">
+                    <div className="ad-dashboardLeft">
+                        <button className='ad-burgerMenu' onClick={() => toggleSidebar()}>
+                            <RxHamburgerMenu />
+                        </button>
+                        <div className="ad-pageName">
+                            Dashboard
                         </div>
                     </div>
-      
+                    <div className="ad-dashboardRight">
+                        <div className="ad-searchBar">
+                            <input type="text" placeholder='Search...' />
+                            <BsSearch />
+                        </div>
+                        <div className="ad-notification">
+                            <IoIosNotificationsOutline />
+                            <PusherComponent channel="my-channel" event="my-event" onMessage={handleReceivedMessage} />
+                        </div>
+                        <div className="ad-profileIcon">
+                            <Image src={profilePic} alt="profilePic" />
+                        </div>
+                        <div className="ad-profileName">
+                            <p>Burhan Shaikh</p>
+                            <p>Admin</p>
+                        </div>
+                    </div>
+                </div>
+
             </header>
         </React.Fragment>
 

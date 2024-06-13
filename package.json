@@ -16,6 +16,8 @@
     "gsap": "^3.12.2",
     "next": "latest",
     "next-client-cookies": "^1.0.6",
+    "pusher": "^5.2.0",
+    "pusher-js": "^8.4.0-rc2",
     "react": "latest",
     "react-apexcharts": "^1.4.1",
     "react-dom": "latest",
