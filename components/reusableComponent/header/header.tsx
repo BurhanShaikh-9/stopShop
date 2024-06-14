@@ -43,75 +43,79 @@ export const Header = () => {
         console.log('Received message in MyComponent:', message);
         // Process the received message as needed
     };
+
+
     return (
         <React.Fragment>
 
-            {/* <header className='cus-header'>
-            <div className="container">
-                <div className="headerInner">
-                    <Link href="/shop" className="logo">
-                        <Image src={logo} alt="logo" />
-                    </Link>
-                    <div className="searchBox">
-                        <input type="text" placeholder="Search anything" className="searchInput" />
-                        <a href="#" className="searchBtn">
-                            <BsSearch />
-                        </a>
-                    </div>
-                    {isMobileNav &&
-                        <div className={`burgerMenuButton ${isShowNav && 'isShowNavActive'}`}>
-                            <button onClick={() => setIsShowNav(!isShowNav)}>
-                                <RxHamburgerMenu />
-                            </button>
-                        </div>
-                    }
-                    {
-                        (!isMobileNav || (isMobileNav && isShowNav)) && (
-                            <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
-                                <ul>
-                                    <li>
-                                        <Link href='/shop'>
-                                            Home
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='#'>
-                                            Sale
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='#'>
-                                            Categories
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='#'>
-                                            About Us
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='#'>
-                                            Contact
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className='cartImageClass' href='#'>
-                                            <Image src={cartIcon} alt='cartImage' />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className='cartImageClass userImageClass' href='/login'>
-                                            <Image src={userIcon} alt='userImage' />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </nav>
-                        )
+            {/*
+             <header className='cus-header'>
+                    <div className="container">
+                        <div className="headerInner">
+                            <Link href="/shop" className="logo">
+                                <Image src={logo} alt="logo" />
+                            </Link>
+                            <div className="searchBox">
+                                <input type="text" placeholder="Search anything" className="searchInput" />
+                                <a href="#" className="searchBtn">
+                                    <BsSearch />
+                                </a>
+                            </div>
+                            {isMobileNav &&
+                                <div className={`burgerMenuButton ${isShowNav && 'isShowNavActive'}`}>
+                                    <button onClick={() => setIsShowNav(!isShowNav)}>
+                                        <RxHamburgerMenu />
+                                    </button>
+                                </div>
+                            }
+                            {
+                                (!isMobileNav || (isMobileNav && isShowNav)) && (
+                                    <nav className={` ${!isMobileNav ? 'desktopNav' : `mobilenav ${isShowNav ? 'showMobileNav' : ''}`}`}>
+                                        <ul>
+                                            <li>
+                                                <Link href='/shop'>
+                                                    Home
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='#'>
+                                                    Sale
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='#'>
+                                                    Categories
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='#'>
+                                                    About Us
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href='#'>
+                                                    Contact
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link className='cartImageClass' href='#'>
+                                                    <Image src={cartIcon} alt='cartImage' />
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link className='cartImageClass userImageClass' href='/login'>
+                                                    <Image src={userIcon} alt='userImage' />
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                )
 
-                    }
-                </div>
-            </div>
-        </header> */}
+                            }
+                        </div>
+                    </div>
+        </header> 
+        */}
             <header>
                 <div className="ad-adminHeader">
                     <div className="ad-dashboardLeft">

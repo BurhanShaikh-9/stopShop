@@ -5,11 +5,15 @@ const PusherComponent = ({ channel, event, onMessage }) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        // Replace with your actual Pusher App Key and Cluster ID
+        // Request notification permission when the component mounts
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+
+        // Initialize Pusher
         const pusher = new Pusher('2c50447b9a6ca009a1ec', {
             cluster: 'ap2'
         });
-
 
         const subscription = pusher.subscribe(channel);
 
@@ -18,13 +22,23 @@ const PusherComponent = ({ channel, event, onMessage }) => {
             if (onMessage) {
                 onMessage(message); // Call the provided callback function
             }
+
+            // Trigger a notification when a new message is received
+            if (Notification.permission === "granted") {
+                new Notification("New Message Received", {
+                    body: JSON.stringify(message),
+                    icon: '/path/to/icon.png' // Optional: add path to a notification icon
+                });
+            }
         });
 
         // Clean up subscription on component unmount
-        return () => subscription.unsubscribe();
+        return () => {
+            subscription.unsubscribe();
+            pusher.disconnect();
+        };
     }, [channel, event, onMessage]);
 
-    console.log(data, 'dataaa')
     return (
         <div>
             {data ? (
